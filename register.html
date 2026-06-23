@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | EquineCare</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-container { display: flex; min-height: 100vh; }
+        .auth-right {
+            flex: 1;
+            background: url('assets/images/3d_horse_illustration_1782132397352.png') center/cover no-repeat;
+            position: relative;
+            display: none;
+        }
+        .auth-right::after {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(30, 58, 95, 0.8));
+        }
+        .auth-left {
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            padding: 2rem; background: var(--bg-white);
+        }
+        @media (min-width: 768px) { .auth-right { display: block; } }
+        .auth-form-wrapper { width: 100%; max-width: 500px; }
+        .auth-input {
+            width: 100%; padding: 1rem; margin-bottom: 0.5rem;
+            border: 1px solid var(--border); border-radius: var(--radius);
+            background: var(--bg-light); color: var(--text-dark); transition: var(--transition);
+        }
+        .auth-input:focus {
+            outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.2);
+        }
+        .strength-meter {
+            height: 5px; background: #e2e8f0; border-radius: 5px; margin-bottom: 1.5rem; overflow: hidden;
+            display: flex;
+        }
+        .strength-bar { height: 100%; transition: 0.3s; width: 0%; }
+        .strength-bar.weak { background: #dc3545; width: 33%; }
+        .strength-bar.medium { background: #ffc107; width: 66%; }
+        .strength-bar.strong { background: #28a745; width: 100%; }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <!-- Left Side: Register Form -->
+        <div class="auth-left">
+            <div class="auth-form-wrapper">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <a href="index.html" class="logo" style="justify-content: center; font-size: 2rem;">
+                        <i class="fas fa-horse-head"></i> EquineCare
+                    </a>
+                </div>
+                <h3 style="margin-bottom: 0.5rem;">Create an Account</h3>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Join EquineCare to access premium veterinary services.</p>
+                
+                <form action="#" method="POST" id="registerForm">
+                    <div class="grid-2" style="gap: 1rem; margin-bottom: 0;">
+                        <div>
+                            <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">First Name</label>
+                            <input type="text" class="auth-input" placeholder="John" required>
+                        </div>
+                        <div>
+                            <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Last Name</label>
+                            <input type="text" class="auth-input" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    
+                    <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Email Address</label>
+                    <input type="email" class="auth-input" placeholder="you@example.com" style="margin-bottom: 1.5rem;" required>
+                    
+                    <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Password</label>
+                    <input type="password" class="auth-input" id="pwd" placeholder="Create a strong password" required>
+                    
+                    <!-- Password Strength Meter -->
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.2rem; color: var(--text-muted);">
+                        <span>Password Strength</span>
+                        <span id="strengthText">Weak</span>
+                    </div>
+                    <div class="strength-meter">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+                    
+                    <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem;">
+                        <input type="checkbox" required style="margin-top: 4px;">
+                        <span>I agree to the <a href="#" style="color: var(--primary);">Terms of Service</a> and <a href="#" style="color: var(--primary);">Privacy Policy</a>.</span>
+                    </label>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 2rem;">Create Account</button>
+                </form>
+                
+                <p style="text-align: center; color: var(--text-muted);">
+                    Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Sign In</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Side: 3D Horse Illustration -->
+        <div class="auth-right">
+            <div style="position: absolute; z-index: 10; top: 10%; right: 10%; text-align: right; color: white;">
+                <h2 style="font-size: 3rem; color: white;">Premium Care</h2>
+                <p style="font-size: 1.25rem; opacity: 0.8;">The best standard of medical care for your equine partner.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple Password Strength validation
+        const pwd = document.getElementById('pwd');
+        const strengthBar = document.getElementById('strengthBar');
+        const strengthText = document.getElementById('strengthText');
+        
+        pwd.addEventListener('input', () => {
+            const val = pwd.value;
+            let strength = 0;
+            if(val.length > 5) strength += 1;
+            if(val.length > 8 && /[0-9]/.test(val) && /[A-Z]/.test(val)) strength += 1;
+            if(val.length > 10 && /[^A-Za-z0-9]/.test(val)) strength += 1;
+            
+            strengthBar.className = 'strength-bar';
+            if(strength === 0 && val.length > 0) {
+                strengthBar.classList.add('weak');
+                strengthText.innerText = 'Weak';
+                strengthText.style.color = '#dc3545';
+            } else if(strength === 1) {
+                strengthBar.classList.add('weak');
+                strengthText.innerText = 'Weak';
+                strengthText.style.color = '#dc3545';
+            } else if(strength === 2) {
+                strengthBar.classList.add('medium');
+                strengthText.innerText = 'Medium';
+                strengthText.style.color = '#ffc107';
+            } else if(strength === 3) {
+                strengthBar.classList.add('strong');
+                strengthText.innerText = 'Strong';
+                strengthText.style.color = '#28a745';
+            } else {
+                strengthText.innerText = '';
+            }
+        });
+    </script>
+</body>
+</html>

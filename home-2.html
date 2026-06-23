@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EquineCare | Premium Advanced Equine Healthcare</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Home 2 Specific Premium Styles */
+        .hero-2 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 5rem;
+            overflow: hidden;
+            background: var(--bg-light);
+        }
+        .hero-2-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            opacity: 0.6;
+            background: url('assets/images/hero_home2_1782131777160.png') center/cover no-repeat fixed;
+        }
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+            backdrop-filter: blur(20px);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .hero-2-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero-2-content h1 {
+            font-size: 5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .glow-btn {
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            border: none;
+            
+        }
+        .glow-btn:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+            transform: scale(1.05);
+        }
+        .premium-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        .premium-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+        .diagnostic-section {
+            background: var(--bg-light);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-horse-head"></i> EquineCare
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html">Home 1</a>
+                <a href="home-2.html">Home 2</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="coverage-areas.html">Coverage Areas</a>
+                <a href="emergency-care.html">Emergency</a>
+                <a href="horse-health-resources.html">Resources</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="rtl-toggle" aria-label="Toggle RTL">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-primary"><i class="fas fa-user"></i> Login</a>
+                </div>
+            </div>
+            
+            <button class="hamburger" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Premium Hero Section -->
+    <header class="hero-2">
+        <div class="hero-2-bg"></div>
+        
+        <!-- Floating 3D Elements -->
+        <div class="floating-element" style="position: absolute; top: 20%; left: 10%; padding: 1rem; border-radius: 20px;">
+            <i class="fas fa-dna fa-2x" style="color: #3b82f6;"></i>
+            <span style=" margin-left: 10px;">Genomic Analysis</span>
+        </div>
+        <div class="floating-element" style="position: absolute; bottom: 30%; right: 15%; padding: 1rem; border-radius: 20px; animation-delay: 2s;">
+            <i class="fas fa-heartbeat fa-2x" style="color: #ef4444;"></i>
+            <span style=" margin-left: 10px;">Vitals Monitoring</span>
+        </div>
+
+        <div class="container">
+            <div class="hero-2-content reveal">
+                <h1>Next-Gen Equine Care</h1>
+                <p style="font-size: 1.5rem;  margin-bottom: 2.5rem;">Experience the future of veterinary medicine. Precision diagnostics, advanced therapeutics, and 24/7 holographic monitoring.</p>
+                <div class="hero-buttons" style="justify-content: center;">
+                    <a href="services.html" class="btn glow-btn" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Explore Technology</a>
+                    <a href="emergency-care.html" class="btn btn-outline" style="  padding: 1rem 2.5rem; font-size: 1.1rem;">Emergency Hub</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Advanced Equine Healthcare (4 Cards) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-3 reveal">
+                <h2 style=" font-size: 2.5rem;">Advanced Equine Healthcare</h2>
+                <p >Pioneering treatments backed by scientific research.</p>
+            </div>
+            
+            <div class="grid-4">
+                <div class="premium-card reveal">
+                    <i class="fas fa-microscope fa-3x mb-1" style="color: #3b82f6;"></i>
+                    <h3 >Regenerative Medicine</h3>
+                    <p >Stem cell therapy and PRP treatments for rapid tendon and ligament recovery.</p>
+                </div>
+                <div class="premium-card reveal">
+                    <i class="fas fa-bone fa-3x mb-1" style="color: #3b82f6;"></i>
+                    <h3 >Advanced Orthopedics</h3>
+                    <p >Minimally invasive arthroscopic surgery and complex fracture repair.</p>
+                </div>
+                <div class="premium-card reveal">
+                    <i class="fas fa-lungs fa-3x mb-1" style="color: #3b82f6;"></i>
+                    <h3 >Respiratory Diagnostics</h3>
+                    <p >Dynamic endoscopy and pulmonary function testing for athletic performance.</p>
+                </div>
+                <div class="premium-card reveal">
+                    <i class="fas fa-brain fa-3x mb-1" style="color: #3b82f6;"></i>
+                    <h3 >Neurological Exams</h3>
+                    <p >Comprehensive neurological evaluations and specialized imaging for spinal issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnostic & Imaging Services -->
+    <section class="section-padding diagnostic-section">
+        <div class="container grid-2 align-items-center">
+            <div class="reveal">
+                <h2 style=" font-size: 2.5rem;">Precision Diagnostics & Imaging</h2>
+                <p style=" margin-bottom: 2rem;">Our facility is equipped with the world's most advanced imaging technology designed specifically for equine anatomy, providing unparalleled clarity for accurate diagnosis.</p>
+                <ul >
+                    <li style="margin-bottom: 1rem;"><i class="fas fa-check text-primary" style="margin-right: 10px;"></i> Standing MRI (Magnetic Resonance Imaging)</li>
+                    <li style="margin-bottom: 1rem;"><i class="fas fa-check text-primary" style="margin-right: 10px;"></i> Nuclear Scintigraphy (Bone Scan)</li>
+                    <li style="margin-bottom: 1rem;"><i class="fas fa-check text-primary" style="margin-right: 10px;"></i> High-Definition Ultrasonography</li>
+                    <li style="margin-bottom: 1rem;"><i class="fas fa-check text-primary" style="margin-right: 10px;"></i> Digital Fluoroscopy</li>
+                </ul>
+            </div>
+            <div class="reveal" style="position: relative;">
+                <div class="floating-element" style="position: absolute; inset: -20px; border-radius: 20px; z-index: 0;"></div>
+                <img src="assets/images/advanced_imaging_1782131791097.png" alt="Advanced MRI" style="border-radius: var(--radius); position: relative; z-index: 1;" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Horse Treatments (Parallax) -->
+    <section class="section-padding" style="background: url('assets/images/testimonial_bg_1782131642445.png') center/cover fixed; position: relative;">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(11, 17, 32, 0.85);"></div>
+        <div class="container text-center reveal" style="position: relative; z-index: 10;">
+            <h2 style="color: white;">Specialized Treatment Programs</h2>
+            <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 3rem;">Tailored therapeutic regimens designed to optimize performance and longevity.</p>
+            
+            <div class="grid-2">
+                <div class="premium-card">
+                    <h3 style="color: white; padding-bottom: 1rem;">Sports Medicine</h3>
+                    <p style="color: rgba(255,255,255,0.9); margin-top: 1rem;">Performance evaluations, joint therapies, and rehabilitation programs for top-tier competitors.</p>
+                </div>
+                <div class="premium-card">
+                    <h3 style="color: white; padding-bottom: 1rem;">Neonatal Intensive Care</h3>
+                    <p style="color: rgba(255,255,255,0.9); margin-top: 1rem;">24/7 monitoring and life support for critically ill foals in our specialized ICU.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Areas Showcase (4 Cards) -->
+    <section class="section-padding">
+        <div class="container text-center reveal">
+            <h2 >Elite Mobile Fleet Coverage</h2>
+            <div class="grid-4 mt-3">
+                <div class="service-card" >
+                    <img src="assets/images/mobile_vet_unit_1782131451532.png" alt="North Region" class="service-img" loading="lazy">
+                    <div class="service-content">
+                        <h3 >Northern Valley</h3>
+                        <p >Rapid response units stationed across all northern equestrian centers.</p>
+                    </div>
+                </div>
+                <div class="service-card" >
+                    <img src="assets/images/emergency_bg_1782131670668.png" alt="South Region" class="service-img" loading="lazy">
+                    <div class="service-content">
+                        <h3 >Southern Plains</h3>
+                        <p >Dedicated emergency response team available 24/7 for southern breeders.</p>
+                    </div>
+                </div>
+                <div class="service-card" >
+                    <img src="assets/images/advanced_imaging_1782131791097.png" alt="East Region" class="service-img" loading="lazy">
+                    <div class="service-content">
+                        <h3 >Eastern Hills</h3>
+                        <p >Specialized diagnostic vans patrolling the eastern stables daily.</p>
+                    </div>
+                </div>
+                <div class="service-card" >
+                    <img src="assets/images/hero_horse_vet_1782131426212.png" alt="West Region" class="service-img" loading="lazy">
+                    <div class="service-content">
+                        <h3 >Western Coast</h3>
+                        <p >Full-service mobile clinics serving coastal riding schools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact Center CTA -->
+    <section class="section-padding text-center" >
+        <div class="container reveal">
+            <h2 style=" font-size: 3rem; margin-bottom: 1rem;">Global Emergency Command Center</h2>
+            <p style=" font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem;">Connected via satellite to our mobile fleet. Real-time vital tracking and rapid dispatch protocols.</p>
+            <a href="tel:+18009990000" class="btn glow-btn" style="font-size: 1.5rem; padding: 1.5rem 3rem; border-radius: 50px;">
+                <i class="fas fa-satellite-dish"></i> Initiate Emergency Protocol
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Reusing standard footer structure -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3><i class="fas fa-horse-head"></i> EquineCare</h3>
+                    <p>Premium veterinary services dedicated to the health, performance, and well-being of your horses.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="emergency-care.html">Emergency</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 1-800-123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EquineCare Advanced Veterinary Practice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Additional parallax effect for Home 2
+        document.addEventListener('mousemove', (e) => {
+            const elements = document.querySelectorAll('.floating-element');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            elements.forEach(el => {
+                el.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

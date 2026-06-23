@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans | EquineCare</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .pricing-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary);
+        }
+        .pricing-card.popular {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        .price {
+            font-size: 3rem;
+            font-family: var(--font-serif);
+            color: var(--secondary);
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+        .pricing-card.popular .price {
+            color: white;
+        }
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+            flex-grow: 1;
+        }
+        .pricing-features li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+        }
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-horse-head"></i> EquineCare
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html">Home 1</a>
+                <a href="home-2.html">Home 2</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="coverage-areas.html">Coverage Areas</a>
+                <a href="emergency-care.html">Emergency</a>
+                <a href="horse-health-resources.html">Resources</a>
+                <a href="pricing.html" style="color: var(--secondary);">Pricing</a>
+                <a href="contact.html">Contact</a>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+                    <button class="rtl-toggle"><i class="fas fa-exchange-alt"></i></button>
+                    <a href="login.html" class="btn btn-primary"><i class="fas fa-user"></i> Login</a>
+                </div>
+            </div>
+            <button class="hamburger"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" style="min-height: 50vh; padding-top: 100px; background: linear-gradient(to right, #1e3a5f, #0f172a);">
+        <div class="container text-center reveal">
+            <h1 style="color: white; font-size: 3.5rem;">Transparent Pricing Packages</h1>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.25rem; max-width: 800px; margin: 0 auto;">Choose a comprehensive preventive care plan tailored to your horse's lifestyle. Memberships offer significant savings over individual services.</p>
+        </div>
+    </header>
+
+    <!-- Pricing Cards (Exactly 4 Cards as per rules) -->
+    <section class="section-padding" style="background: var(--bg-light);">
+        <div class="container reveal">
+            <div class="grid-4 mt-3">
+                
+                <!-- Card 1: Basic Care -->
+                <div class="pricing-card">
+                    <h3>Basic Care</h3>
+                    <p style="color: var(--text-muted);">Essential maintenance for pasture companions.</p>
+                    <div class="price">$350<span style="font-size: 1rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: normal;">/year</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check text-secondary"></i> Annual Physical Exam</li>
+                        <li><i class="fas fa-check text-secondary"></i> Core Vaccinations</li>
+                        <li><i class="fas fa-check text-secondary"></i> Routine Dental Float</li>
+                        <li><i class="fas fa-check text-secondary"></i> 2 Fecal Egg Counts</li>
+                        <li style="color: var(--text-muted);"><i class="fas fa-times"></i> Diagnostic Imaging</li>
+                        <li style="color: var(--text-muted);"><i class="fas fa-times"></i> Emergency Waiver</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="width: 100%;">Select Basic</a>
+                </div>
+
+                <!-- Card 2: Performance Horse -->
+                <div class="pricing-card popular">
+                    <div style="background: var(--secondary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; display: inline-block; margin: -40px auto 1rem;">MOST POPULAR</div>
+                    <h3 style="color: white;">Performance</h3>
+                    <p style="color: rgba(255,255,255,0.8);">For active competitors and show horses.</p>
+                    <div class="price">$750<span style="font-size: 1rem; color: rgba(255,255,255,0.8); font-family: var(--font-sans); font-weight: normal;">/year</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check" style="color: var(--secondary);"></i> Bi-annual Physical Exams</li>
+                        <li><i class="fas fa-check" style="color: var(--secondary);"></i> All Risk-Based Vaccines</li>
+                        <li><i class="fas fa-check" style="color: var(--secondary);"></i> Advanced Dental Care</li>
+                        <li><i class="fas fa-check" style="color: var(--secondary);"></i> Soundness Evaluation</li>
+                        <li><i class="fas fa-check" style="color: var(--secondary);"></i> Basic Blood Panel</li>
+                        <li style="color: rgba(255,255,255,0.5);"><i class="fas fa-times"></i> Emergency Waiver</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary" style="width: 100%;">Select Performance</a>
+                </div>
+
+                <!-- Card 3: Premium Stable -->
+                <div class="pricing-card">
+                    <h3>Premium Stable</h3>
+                    <p style="color: var(--text-muted);">Ultimate coverage and priority service.</p>
+                    <div class="price">$1,200<span style="font-size: 1rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: normal;">/year</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check text-secondary"></i> Quarterly Wellness Visits</li>
+                        <li><i class="fas fa-check text-secondary"></i> Custom Vaccination Plan</li>
+                        <li><i class="fas fa-check text-secondary"></i> Unlimited Dental & Floats</li>
+                        <li><i class="fas fa-check text-secondary"></i> Comprehensive Bloodwork</li>
+                        <li><i class="fas fa-check text-secondary"></i> 1 Free Emergency Call Fee</li>
+                        <li><i class="fas fa-check text-secondary"></i> 10% Off Surgical Procedures</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="width: 100%;">Select Premium</a>
+                </div>
+
+                <!-- Card 4: Senior Care (Added to ensure 4 cards) -->
+                <div class="pricing-card">
+                    <h3>Senior Care</h3>
+                    <p style="color: var(--text-muted);">Specialized focus for horses 15+ years.</p>
+                    <div class="price">$550<span style="font-size: 1rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: normal;">/year</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check text-secondary"></i> Bi-annual Senior Exams</li>
+                        <li><i class="fas fa-check text-secondary"></i> Core Vaccinations</li>
+                        <li><i class="fas fa-check text-secondary"></i> Palliative Dental Float</li>
+                        <li><i class="fas fa-check text-secondary"></i> Cushings/Metabolic Panel</li>
+                        <li><i class="fas fa-check text-secondary"></i> Joint Supplement Review</li>
+                        <li style="color: var(--text-muted);"><i class="fas fa-times"></i> Emergency Waiver</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="width: 100%;">Select Senior</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="section-padding">
+        <div class="container reveal">
+            <h2 class="text-center mb-3">Plan Comparison</h2>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Basic Care</th>
+                            <th>Performance</th>
+                            <th>Premium Stable</th>
+                            <th>Senior Care</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Physical Exams</td>
+                            <td>1x Annual</td>
+                            <td>2x Annual</td>
+                            <td>4x Annual</td>
+                            <td>2x Annual</td>
+                        </tr>
+                        <tr>
+                            <td>Vaccinations included</td>
+                            <td>Core Only</td>
+                            <td>All</td>
+                            <td>Custom</td>
+                            <td>Core</td>
+                        </tr>
+                        <tr>
+                            <td>Dental Floating</td>
+                            <td>1x Routine</td>
+                            <td>1x Advanced</td>
+                            <td>Unlimited</td>
+                            <td>2x Palliative</td>
+                        </tr>
+                        <tr>
+                            <td>Bloodwork / Lab</td>
+                            <td><i class="fas fa-times" style="color: #dc3545;"></i></td>
+                            <td>Basic Panel</td>
+                            <td>Comprehensive</td>
+                            <td>Metabolic Panel</td>
+                        </tr>
+                        <tr>
+                            <td>Emergency Call Fee Waived</td>
+                            <td><i class="fas fa-times" style="color: #dc3545;"></i></td>
+                            <td><i class="fas fa-times" style="color: #dc3545;"></i></td>
+                            <td>1x per year</td>
+                            <td><i class="fas fa-times" style="color: #dc3545;"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Farm Call Fee Discount</td>
+                            <td>None</td>
+                            <td>25% Off</td>
+                            <td>100% Waived</td>
+                            <td>None</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-padding" style="background: var(--bg-light);">
+        <div class="container reveal text-center">
+            <h2>Pricing FAQ</h2>
+            <p class="mb-3">Common questions about billing and packages.</p>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+                <div style="background: var(--bg-white); padding: 1.5rem; border-radius: var(--radius); margin-bottom: 1rem; box-shadow: var(--shadow-sm);">
+                    <h4 style="margin-bottom: 0.5rem;"><i class="fas fa-chevron-right text-secondary"></i> Do you offer payment plans?</h4>
+                    <p style="color: var(--text-muted);">Yes, all our annual wellness packages can be billed in 12 equal monthly installments via auto-draft at no additional interest charge.</p>
+                </div>
+                <div style="background: var(--bg-white); padding: 1.5rem; border-radius: var(--radius); margin-bottom: 1rem; box-shadow: var(--shadow-sm);">
+                    <h4 style="margin-bottom: 0.5rem;"><i class="fas fa-chevron-right text-secondary"></i> Are medications included in the packages?</h4>
+                    <p style="color: var(--text-muted);">Vaccines and routine dewormers specifically listed in the package are included. Prescription medications, joint injections, and emergency drugs are billed separately.</p>
+                </div>
+                <div style="background: var(--bg-white); padding: 1.5rem; border-radius: var(--radius); margin-bottom: 1rem; box-shadow: var(--shadow-sm);">
+                    <h4 style="margin-bottom: 0.5rem;"><i class="fas fa-chevron-right text-secondary"></i> Do you accept equine insurance?</h4>
+                    <p style="color: var(--text-muted);">We work with all major equine mortality and major medical insurance providers. We require payment at the time of service but will provide all necessary documentation for you to submit your claim.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 EquineCare Veterinary Practice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

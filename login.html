@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | EquineCare</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .auth-left {
+            flex: 1;
+            background: url('assets/images/3d_horse_illustration_1782132397352.png') center/cover no-repeat;
+            position: relative;
+            display: none;
+        }
+        .auth-left::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.8), rgba(0, 0, 0, 0.5));
+        }
+        .auth-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: var(--bg-white);
+        }
+        @media (min-width: 768px) {
+            .auth-left { display: block; }
+        }
+        .auth-form-wrapper {
+            width: 100%;
+            max-width: 450px;
+        }
+        .auth-input {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg-light);
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+        .auth-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.2);
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: transparent;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .social-btn:hover {
+            background: var(--bg-light);
+            border-color: var(--text-muted);
+        }
+        .social-btn.google { color: #db4437; }
+        .social-btn.facebook { color: #4267B2; }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <!-- Left Side: 3D Horse Illustration -->
+        <div class="auth-left">
+            <div style="position: absolute; z-index: 10; bottom: 10%; left: 10%; color: white;">
+                <h2 style="font-size: 3rem; color: white;">Welcome Back</h2>
+                <p style="font-size: 1.25rem; opacity: 0.8;">Access your horse's medical records and manage appointments.</p>
+            </div>
+        </div>
+        
+        <!-- Right Side: Login Form -->
+        <div class="auth-right">
+            <div class="auth-form-wrapper">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <a href="index.html" class="logo" style="justify-content: center; font-size: 2rem;">
+                        <i class="fas fa-horse-head"></i> EquineCare
+                    </a>
+                </div>
+                <h3 style="margin-bottom: 0.5rem;">Sign In</h3>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Please enter your credentials to proceed.</p>
+                
+                <form action="#" method="POST">
+                    <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Email Address</label>
+                    <input type="email" class="auth-input" placeholder="you@example.com" required>
+                    
+                    <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Password</label>
+                    <input type="password" class="auth-input" placeholder="••••••••" required>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <label style="display: flex; align-items: center; gap: 5px; cursor: pointer; color: var(--text-muted);">
+                            <input type="checkbox"> Remember Me
+                        </label>
+                        <a href="#" style="color: var(--primary); font-weight: 600;">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 2rem;">Login</button>
+                </form>
+                
+                <div style="text-align: center; margin-bottom: 2rem; position: relative;">
+                    <hr style="border: none; border-top: 1px solid var(--border);">
+                    <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--bg-white); padding: 0 10px; color: var(--text-muted); font-size: 0.9rem;">Or continue with</span>
+                </div>
+                
+                <!-- Social Login Buttons -->
+                <button class="social-btn"><i class="fab fa-google google"></i> Sign in with Google</button>
+                <button class="social-btn"><i class="fab fa-facebook-f facebook"></i> Sign in with Facebook</button>
+                
+                <p style="text-align: center; margin-top: 2rem; color: var(--text-muted);">
+                    Don't have an account? <a href="register.html" style="color: var(--primary); font-weight: 600;">Register Here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
