@@ -27,6 +27,10 @@
   background: rgba(30, 30, 30, 0.95);
 }
 
+[data-theme="dark"] .logo {
+  color: #ffffff;
+}
+
 [data-theme="dark"] .nav-links a {
   color: var(--text-dark);
 }
@@ -41,7 +45,7 @@
 [data-theme="dark"] h4, 
 [data-theme="dark"] h5, 
 [data-theme="dark"] h6 {
-  color: #e2e8f0;
+  color: #ffffff !important;
 }
 
 [data-theme="dark"] .service-card {
@@ -73,4 +77,11 @@
   [data-theme="dark"] .nav-links {
     background: var(--bg-white);
   }
+}
+
+[data-theme="dark"] .footer-about p,
+[data-theme="dark"] .footer-links ul li,
+[data-theme="dark"] .footer-links ul a,
+[data-theme="dark"] .footer-bottom {
+  color: var(--text-muted);
 }

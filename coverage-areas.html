@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -27,7 +27,6 @@
                 <a href="coverage-areas.html" style="color: var(--secondary);">Coverage Areas</a>
                 <a href="emergency-care.html">Emergency</a>
                 <a href="horse-health-resources.html">Resources</a>
-                <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
                 
                 <div class="nav-actions">
@@ -41,24 +40,92 @@
     </nav>
 
     <!-- Coverage Hero -->
-    <header class="hero" style="min-height: 50vh; padding-top: 100px; background: linear-gradient(135deg, #1e3a5f, #3b82f6);">
+    <header class="hero" style="min-height: 60vh; padding-top: 100px; background: var(--primary);">
         <div class="container text-center reveal">
             <h1 style="color: white; font-size: 3.5rem;">Mobile Veterinary Coverage</h1>
-            <p style="color: rgba(255,255,255,0.9); font-size: 1.25rem; max-width: 700px; margin: 0 auto;">Bringing premium equine veterinary care directly to your stable, pasture, or equestrian center across the entire region.</p>
+            <p style="color: white; font-size: 1.25rem; max-width: 700px; margin: 0 auto;">Bringing premium equine veterinary care directly to your stable, pasture, or equestrian center across the entire region.</p>
         </div>
     </header>
 
-    <!-- Interactive Coverage Map Placeholder -->
-    <section class="section-padding" style="background: var(--bg-light);">
+    <!-- Mobile Clinics Section -->
+    <section class="section-padding" style="background: var(--bg-light); overflow: hidden;">
         <div class="container text-center reveal">
-            <h2>Our Service Territories</h2>
-            <p class="mb-3">We cover a 100-mile radius from our central clinic hub.</p>
-            <div style="background: var(--bg-white); padding: 1rem; border-radius: var(--radius); box-shadow: var(--shadow-lg); position: relative; height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                <div style="position: absolute; inset: 0; background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Google_Maps_icon_%282020%29.svg/1024px-Google_Maps_icon_%282020%29.svg.png') center/cover; opacity: 0.1; filter: grayscale(1);"></div>
-                <div style="position: relative; z-index: 10;">
-                    <i class="fas fa-map-marked-alt fa-5x" style="color: var(--primary); margin-bottom: 1rem;"></i>
-                    <h3 style="color: var(--text-dark);">Interactive Map Interface</h3>
-                    <p style="color: var(--text-muted);">[Map integration goes here]</p>
+            <h2>Our Mobile Clinics</h2>
+            <p class="mb-4">Bringing advanced veterinary care directly to your stable.</p>
+            
+            <style>
+                .split-3d-section {
+                    display: flex;
+                    align-items: center;
+                    gap: 4rem;
+                    max-width: 1100px;
+                    margin: 0 auto;
+                    perspective: 1200px;
+                    text-align: left;
+                }
+                .split-image-container {
+                    flex: 1;
+                    position: relative;
+                    transform-style: preserve-3d;
+                    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                }
+                .split-3d-section:hover .split-image-container {
+                    transform: rotateY(12deg) rotateX(5deg);
+                }
+                .main-3d-image {
+                    width: 100%;
+                    border-radius: var(--radius);
+                    box-shadow: 20px 20px 40px rgba(0,0,0,0.15);
+                    transform: translateZ(20px);
+                    display: block;
+                }
+                .floating-badge {
+                    position: absolute;
+                    bottom: -20px;
+                    right: -20px;
+                    background: var(--secondary);
+                    color: white;
+                    padding: 1.5rem;
+                    border-radius: var(--radius);
+                    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+                    transform: translateZ(60px);
+                    text-align: center;
+                }
+                .split-content {
+                    flex: 1;
+                }
+                @media (max-width: 768px) {
+                    .split-3d-section {
+                        flex-direction: column;
+                        gap: 3rem;
+                        margin-top: 2rem;
+                    }
+                    .floating-badge {
+                        right: 10px;
+                        bottom: -10px;
+                        padding: 1rem;
+                    }
+                    .floating-badge h3 { font-size: 1.6rem !important; }
+                    .floating-badge p { font-size: 0.85rem !important; }
+                }
+            </style>
+            
+            <div class="split-3d-section">
+                <div class="split-image-container">
+                    <img src="assets/images/mobile_vet_unit_1782131451532.png" alt="Mobile Vet Clinic" class="main-3d-image">
+                    <div class="floating-badge">
+                        <h3 style="margin: 0; font-size: 2.2rem; color: white;">100+</h3>
+                        <p style="margin: 0; font-size: 0.95rem; font-weight: bold;">Miles Radius Covered</p>
+                    </div>
+                </div>
+                <div class="split-content">
+                    <h3 style="color: var(--primary); font-size: 2.2rem; margin-bottom: 1rem;">Fully Equipped Vehicles</h3>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">We bring the clinic directly to your farm. Our state-of-the-art mobile veterinary units are fully stocked with advanced diagnostic equipment, meaning your horse receives top-tier medical attention without the stress of trailering.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 0;">
+                        <li style="margin-bottom: 12px; font-size: 1.05rem; color: var(--text-dark);"><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 12px; font-size: 1.2rem;"></i> Advanced Diagnostics On-Site</li>
+                        <li style="margin-bottom: 12px; font-size: 1.05rem; color: var(--text-dark);"><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 12px; font-size: 1.2rem;"></i> Fully Stocked Portable Pharmacies</li>
+                        <li style="margin-bottom: 0; font-size: 1.05rem; color: var(--text-dark);"><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 12px; font-size: 1.2rem;"></i> GPS Dispatched for Rapid Emergency Response</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -73,7 +140,7 @@
             <div class="grid-4">
                 <div class="service-card reveal">
                     <div class="service-content">
-                        <i class="fas fa-compass fa-3x mb-1" style="color: var(--secondary);"></i>
+                        <i class="fas fa-mountain fa-3x mb-1" style="color: var(--secondary);"></i>
                         <h3>Northern Valley</h3>
                         <p>Serving the high-density breeding farms and riding schools in the North.</p>
                         <hr style="border:none; border-top: 1px solid var(--border); margin: 1rem 0;">
@@ -85,7 +152,7 @@
                 </div>
                 <div class="service-card reveal">
                     <div class="service-content">
-                        <i class="fas fa-compass fa-3x mb-1" style="color: var(--secondary);"></i>
+                        <i class="fas fa-horse-head fa-3x mb-1" style="color: var(--secondary);"></i>
                         <h3>Southern Plains</h3>
                         <p>Covering the large racing stables and performance centers down South.</p>
                         <hr style="border:none; border-top: 1px solid var(--border); margin: 1rem 0;">
@@ -97,7 +164,7 @@
                 </div>
                 <div class="service-card reveal">
                     <div class="service-content">
-                        <i class="fas fa-compass fa-3x mb-1" style="color: var(--secondary);"></i>
+                        <i class="fas fa-tree fa-3x mb-1" style="color: var(--secondary);"></i>
                         <h3>Eastern Hills</h3>
                         <p>Providing specialized care for private owners and boutique boarding facilities.</p>
                         <hr style="border:none; border-top: 1px solid var(--border); margin: 1rem 0;">
@@ -109,7 +176,7 @@
                 </div>
                 <div class="service-card reveal">
                     <div class="service-content">
-                        <i class="fas fa-compass fa-3x mb-1" style="color: var(--secondary);"></i>
+                        <i class="fas fa-water fa-3x mb-1" style="color: var(--secondary);"></i>
                         <h3>Western Coast</h3>
                         <p>Servicing the coastal equestrian trails and premium dressage arenas.</p>
                         <hr style="border:none; border-top: 1px solid var(--border); margin: 1rem 0;">
@@ -153,17 +220,24 @@
                     <h4 style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-calendar-alt text-primary"></i> Routine Appointments</h4>
                     <p style="color: var(--text-muted);">Please schedule non-emergency farm calls at least 1-2 weeks in advance. Farm call fees are calculated based on mileage from our central clinic. We offer split-call discounts if multiple owners at the same facility schedule on the same day.</p>
                 </div>
-                <div class="glass-card">
+                <div class="glass-card mb-2">
                     <h4 style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-ambulance text-danger"></i> Emergency Dispatches</h4>
                     <p style="color: var(--text-muted);">In a life-threatening emergency, our closest mobile unit is dispatched immediately. Emergency farm call fees apply outside of normal business hours (Mon-Fri 8am-5pm) and on holidays.</p>
+                </div>
+                <div class="glass-card mb-2">
+                    <h4 style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-map-signs text-warning"></i> Out-of-Area Calls</h4>
+                    <p style="color: var(--text-muted);">For farm calls outside our standard 100-mile radius, additional travel fees apply. These calls are scheduled based on availability and may require coordination with local veterinary partners.</p>
+                </div>
+                <div class="glass-card">
+                    <h4 style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-ban text-secondary"></i> Cancellation Policy</h4>
+                    <p style="color: var(--text-muted);">We kindly request a 24-hour notice for all routine appointment cancellations. Late cancellations or no-shows may be subject to a nominal fee to compensate for scheduled travel time.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Request Visit CTA -->
-    <section class="section-padding text-center" style="background: url('assets/images/why_trust_us_1782131654621.png') center/cover; position: relative;">
-        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6);"></div>
+    <section class="section-padding text-center" style="background: var(--primary); position: relative;">
         <div class="container reveal" style="position: relative; z-index: 10;">
             <h2 style="color: white; margin-bottom: 1.5rem;">Schedule a Farm Visit</h2>
             <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Contact our dispatch center to arrange a visit from one of our mobile veterinary units to your location.</p>
@@ -173,9 +247,50 @@
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3><i class="fas fa-horse-head"></i> EquineCare</h3>
+                    <p>Premium veterinary services dedicated to the health, performance, and well-being of your horses. Available for routine and emergency care.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="coverage-areas.html">Coverage Areas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="emergency-care.html">Emergency Guide</a></li>
+                        <li><a href="horse-health-resources.html">Health Resources</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Client Portal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-map-marker-alt" style="margin-top: 5px;"></i> 123 Equestrian Way, Valley Springs</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-phone" style="margin-top: 5px;"></i> 1-800-123-4567</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-envelope" style="margin-top: 5px;"></i> emergency@equinecare.com</li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2026 EquineCare Veterinary Practice. All Rights Reserved.</p>
             </div>
@@ -185,3 +300,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

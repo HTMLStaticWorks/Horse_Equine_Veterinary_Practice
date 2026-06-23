@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -27,7 +27,6 @@
                 <a href="coverage-areas.html">Coverage Areas</a>
                 <a href="emergency-care.html">Emergency</a>
                 <a href="horse-health-resources.html">Resources</a>
-                <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
                 
                 <div class="nav-actions">
@@ -41,10 +40,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero" style="min-height: 50vh; padding-top: 100px; background: linear-gradient(135deg, var(--primary), #2b4c7e);">
+    <header class="hero" style="min-height: 60vh; padding-top: 100px; background: var(--primary);">
         <div class="container text-center reveal">
             <h1 style="color: white; font-size: 3.5rem;">Our Veterinary Services</h1>
-            <p style="color: rgba(255,255,255,0.9); font-size: 1.25rem; max-width: 700px; margin: 0 auto;">From routine preventive care to advanced surgical interventions, we offer a complete spectrum of equine veterinary services.</p>
+            <p style="color: white; font-size: 1.25rem; max-width: 700px; margin: 0 auto;">From routine preventive care to advanced surgical interventions, we offer a complete spectrum of equine veterinary services.</p>
         </div>
     </header>
 
@@ -57,35 +56,35 @@
             </div>
             <div class="grid-4">
                 <div class="service-card reveal">
+                    <img src="assets/images/Wellness%20Exams.png" alt="Wellness Exams" class="service-img" loading="lazy">
                     <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
                         <h3>Wellness Exams</h3>
                         <p>Comprehensive physical examinations to establish baseline health and identify early signs of illness.</p>
-                        <a href="service-details.html" class="btn-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="service-details.html?service=wellness" class="btn-link">View Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card reveal">
+                    <img src="assets/images/Vaccinations.png" alt="Vaccinations" class="service-img" loading="lazy">
                     <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-syringe"></i></div>
                         <h3>Vaccinations</h3>
                         <p>Customized vaccination protocols based on your horse's age, use, and exposure risk.</p>
-                        <a href="service-details.html" class="btn-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="service-details.html?service=vaccinations" class="btn-link">View Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card reveal">
+                    <img src="assets/images/Parasite%20Control.png" alt="Parasite Control" class="service-img" loading="lazy">
                     <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-bug"></i></div>
                         <h3>Parasite Control</h3>
                         <p>Fecal egg counts and targeted deworming strategies to manage internal parasites effectively.</p>
-                        <a href="service-details.html" class="btn-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="service-details.html?service=parasite" class="btn-link">View Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card reveal">
+                    <img src="assets/images/Nutritional%20Consult.png" alt="Nutritional Consult" class="service-img" loading="lazy">
                     <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-apple-alt"></i></div>
                         <h3>Nutritional Consult</h3>
                         <p>Expert evaluation of forage and feed to optimize your horse's diet and performance.</p>
-                        <a href="service-details.html" class="btn-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="service-details.html?service=nutrition" class="btn-link">View Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -99,37 +98,151 @@
                 <h2>Emergency Veterinary Services</h2>
                 <p>Rapid response for critical situations, available 24/7.</p>
             </div>
-            <div class="grid-4">
-                <div class="service-card reveal">
-                    <img src="assets/images/emergency_bg_1782131670668.png" alt="Colic Treatment" class="service-img" loading="lazy">
-                    <div class="service-content">
-                        <h3>Colic Management</h3>
-                        <p>Immediate medical management and surgical referral options for all types of equine colic.</p>
-                        <a href="emergency-care.html" class="btn-link text-danger">Emergency Protocol <i class="fas fa-arrow-right"></i></a>
+    <style>
+        .acc-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            height: 450px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            perspective: 1500px;
+        }
+        .acc-panel {
+            flex: 1;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
+            background: var(--primary);
+            transform-style: preserve-3d;
+            transform: rotateY(-15deg);
+            box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
+        }
+        .acc-container:hover .acc-panel {
+            transform: rotateY(0deg) scale(0.95);
+            opacity: 0.7;
+        }
+        .acc-container .acc-panel:hover {
+            flex: 4;
+            transform: translateZ(30px) scale(1) !important;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            z-index: 10;
+            opacity: 1;
+        }
+        .acc-img {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: opacity 0.6s ease;
+        }
+        .acc-panel:hover .acc-img {
+            opacity: 0.8;
+        }
+        .acc-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+            color: white;
+            text-align: left;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .acc-panel:hover .acc-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .acc-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        .acc-text {
+            font-size: 1rem;
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        .acc-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        .acc-link:hover {
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .acc-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                height: auto;
+                perspective: none;
+                gap: 1.5rem;
+            }
+            .acc-panel {
+                min-height: 250px;
+                transform: none !important;
+            }
+            .acc-container:hover .acc-panel {
+                transform: none !important;
+                opacity: 1;
+            }
+            .acc-container .acc-panel:hover {
+                transform: none !important;
+            }
+            .acc-content {
+                transform: translateY(0);
+                opacity: 1;
+                background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+                text-align: center;
+            }
+        }
+    </style>
+            <div class="acc-container reveal">
+                <div class="acc-panel">
+                    <img src="assets/images/Colic%20Management.png" alt="Colic Treatment" class="acc-img" loading="lazy">
+                    <div class="acc-content">
+                        <div class="acc-title">Colic Management</div>
+                        <p class="acc-text">Immediate medical management and surgical referral options for all types of equine colic.</p>
+                        <a href="emergency-care.html" class="acc-link text-danger">Emergency Protocol <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="service-card reveal">
-                    <img src="assets/images/emergency_bg_1782131670668.png" alt="Wound Care" class="service-img" loading="lazy">
-                    <div class="service-content">
-                        <h3>Lacerations & Wounds</h3>
-                        <p>Emergency suturing, wound debridement, and infection control for trauma injuries.</p>
-                        <a href="emergency-care.html" class="btn-link text-danger">Emergency Protocol <i class="fas fa-arrow-right"></i></a>
+                <div class="acc-panel">
+                    <img src="assets/images/Lacerations%20&amp;%20Wounds.png" alt="Wound Care" class="acc-img" loading="lazy">
+                    <div class="acc-content">
+                        <div class="acc-title">Lacerations & Wounds</div>
+                        <p class="acc-text">Emergency suturing, wound debridement, and infection control for trauma injuries.</p>
+                        <a href="emergency-care.html" class="acc-link text-danger">Emergency Protocol <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="service-card reveal">
-                    <img src="assets/images/emergency_bg_1782131670668.png" alt="Ophthalmic" class="service-img" loading="lazy">
-                    <div class="service-content">
-                        <h3>Ophthalmic Emergencies</h3>
-                        <p>Urgent care for corneal ulcers, uveitis, and other acute eye injuries to save vision.</p>
-                        <a href="emergency-care.html" class="btn-link text-danger">Emergency Protocol <i class="fas fa-arrow-right"></i></a>
+                <div class="acc-panel">
+                    <img src="assets/images/Ophthalmic%20Emergencies.png" alt="Ophthalmic" class="acc-img" loading="lazy">
+                    <div class="acc-content">
+                        <div class="acc-title">Ophthalmic Emergencies</div>
+                        <p class="acc-text">Urgent care for corneal ulcers, uveitis, and other acute eye injuries to save vision.</p>
+                        <a href="emergency-care.html" class="acc-link text-danger">Emergency Protocol <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="service-card reveal">
-                    <img src="assets/images/emergency_bg_1782131670668.png" alt="Foaling" class="service-img" loading="lazy">
-                    <div class="service-content">
-                        <h3>Dystocia (Foaling)</h3>
-                        <p>Emergency assistance for difficult births to protect both the mare and the foal.</p>
-                        <a href="emergency-care.html" class="btn-link text-danger">Emergency Protocol <i class="fas fa-arrow-right"></i></a>
+                <div class="acc-panel">
+                    <img src="assets/images/Dystocia%20(Foaling).png" alt="Foaling" class="acc-img" loading="lazy">
+                    <div class="acc-content">
+                        <div class="acc-title">Dystocia (Foaling)</div>
+                        <p class="acc-text">Emergency assistance for difficult births to protect both the mare and the foal.</p>
+                        <a href="emergency-care.html" class="acc-link text-danger">Emergency Protocol <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -145,28 +258,28 @@
             </div>
             <div class="grid-4">
                 <div class="service-card reveal">
-                    <img src="assets/images/service_dental_1782131436904.png" alt="Routine Floating" class="service-img" loading="lazy">
+                    <img src="assets/images/Routine%20Floating.png" alt="Routine Floating" class="service-img" loading="lazy">
                     <div class="service-content">
                         <h3>Routine Floating</h3>
                         <p>Power and hand floating to remove sharp enamel points and balance the dental arcade.</p>
                     </div>
                 </div>
                 <div class="service-card reveal">
-                    <img src="assets/images/service_dental_1782131436904.png" alt="Extractions" class="service-img" loading="lazy">
+                    <img src="assets/images/Advanced%20Extractions.png" alt="Extractions" class="service-img" loading="lazy">
                     <div class="service-content">
                         <h3>Advanced Extractions</h3>
                         <p>Safe removal of diseased, fractured, or infected teeth using modern surgical techniques.</p>
                     </div>
                 </div>
                 <div class="service-card reveal">
-                    <img src="assets/images/why_trust_us_1782131654621.png" alt="Breeding Exams" class="service-img" loading="lazy">
+                    <img src="assets/images/Breeding%20Soundness.png" alt="Breeding Exams" class="service-img" loading="lazy">
                     <div class="service-content">
                         <h3>Breeding Soundness</h3>
                         <p>Comprehensive reproductive evaluations for both mares and stallions before the breeding season.</p>
                     </div>
                 </div>
                 <div class="service-card reveal">
-                    <img src="assets/images/why_trust_us_1782131654621.png" alt="AI Services" class="service-img" loading="lazy">
+                    <img src="assets/images/Artificial%20Insemination.png" alt="AI Services" class="service-img" loading="lazy">
                     <div class="service-content">
                         <h3>Artificial Insemination</h3>
                         <p>Expert timing and AI services using fresh, cooled, or frozen semen for optimal conception rates.</p>
@@ -183,33 +296,136 @@
                 <h2>Diagnostic Services</h2>
                 <p>Precision technology for accurate diagnosis.</p>
             </div>
-            <div class="grid-4">
-                <div class="service-card reveal">
-                    <div class="service-content text-center">
-                        <i class="fas fa-x-ray fa-3x mb-1" style="color: var(--secondary);"></i>
-                        <h3>Digital Radiography</h3>
-                        <p>High-resolution portable X-rays for immediate stall-side evaluation of bones and joints.</p>
+    <style>
+        .orb-container {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            padding: 3rem 0;
+            perspective: 1200px;
+            flex-wrap: wrap;
+        }
+        .orb-item {
+            position: relative;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .orb-item:hover {
+            transform: translateZ(30px) translateY(-15px);
+        }
+        .orb-sphere {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,1), rgba(212, 163, 115, 0.15));
+            box-shadow: 
+                inset -15px -15px 25px rgba(0,0,0,0.05),
+                inset 10px 10px 15px rgba(255,255,255,0.8),
+                0 15px 25px rgba(0,0,0,0.1),
+                0 0 0 3px rgba(212, 163, 115, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            position: relative;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+        }
+        .orb-item:hover .orb-sphere {
+            box-shadow: 
+                inset -15px -15px 25px rgba(0,0,0,0.05),
+                inset 10px 10px 15px rgba(255,255,255,0.8),
+                0 25px 35px rgba(0,0,0,0.2),
+                0 0 15px 5px rgba(212, 163, 115, 0.4);
+            transform: rotateY(15deg);
+        }
+        .orb-icon {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            transform: translateZ(20px);
+            transition: all 0.5s ease;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .orb-item:hover .orb-icon {
+            transform: translateZ(50px) scale(1.15);
+            color: var(--primary);
+            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .orb-content {
+            text-align: center;
+            transform: translateZ(10px);
+            transition: transform 0.5s ease;
+        }
+        .orb-item:hover .orb-content {
+            transform: translateZ(30px);
+        }
+        .orb-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        .orb-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.4s ease;
+        }
+        .orb-item:hover .orb-title::after {
+            width: 100%;
+        }
+        .orb-desc {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+    </style>
+            <div class="orb-container">
+                <div class="orb-item reveal">
+                    <div class="orb-sphere">
+                        <i class="fas fa-x-ray orb-icon"></i>
+                    </div>
+                    <div class="orb-content">
+                        <div class="orb-title">Digital Radiography</div>
+                        <p class="orb-desc">High-resolution portable X-rays for immediate stall-side evaluation of bones and joints.</p>
                     </div>
                 </div>
-                <div class="service-card reveal">
-                    <div class="service-content text-center">
-                        <i class="fas fa-wave-square fa-3x mb-1" style="color: var(--secondary);"></i>
-                        <h3>Ultrasonography</h3>
-                        <p>Advanced ultrasound for soft tissue injuries, reproductive tracking, and abdominal scans.</p>
+                <div class="orb-item reveal">
+                    <div class="orb-sphere">
+                        <i class="fas fa-wave-square orb-icon"></i>
+                    </div>
+                    <div class="orb-content">
+                        <div class="orb-title">Ultrasonography</div>
+                        <p class="orb-desc">Advanced ultrasound for soft tissue injuries, reproductive tracking, and abdominal scans.</p>
                     </div>
                 </div>
-                <div class="service-card reveal">
-                    <div class="service-content text-center">
-                        <i class="fas fa-vials fa-3x mb-1" style="color: var(--secondary);"></i>
-                        <h3>In-House Laboratory</h3>
-                        <p>Rapid bloodwork, urinalysis, and cytology results processed in our state-of-the-art lab.</p>
+                <div class="orb-item reveal">
+                    <div class="orb-sphere">
+                        <i class="fas fa-vials orb-icon"></i>
+                    </div>
+                    <div class="orb-content">
+                        <div class="orb-title">In-House Laboratory</div>
+                        <p class="orb-desc">Rapid bloodwork, urinalysis, and cytology results processed in our state-of-the-art lab.</p>
                     </div>
                 </div>
-                <div class="service-card reveal">
-                    <div class="service-content text-center">
-                        <i class="fas fa-video fa-3x mb-1" style="color: var(--secondary);"></i>
-                        <h3>Endoscopy</h3>
-                        <p>Fiber-optic evaluation of the respiratory and gastrointestinal tracts.</p>
+                <div class="orb-item reveal">
+                    <div class="orb-sphere">
+                        <i class="fas fa-video orb-icon"></i>
+                    </div>
+                    <div class="orb-content">
+                        <div class="orb-title">Endoscopy</div>
+                        <p class="orb-desc">Fiber-optic evaluation of the respiratory and gastrointestinal tracts.</p>
                     </div>
                 </div>
             </div>
@@ -227,9 +443,50 @@
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3><i class="fas fa-horse-head"></i> EquineCare</h3>
+                    <p>Premium veterinary services dedicated to the health, performance, and well-being of your horses. Available for routine and emergency care.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="coverage-areas.html">Coverage Areas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="emergency-care.html">Emergency Guide</a></li>
+                        <li><a href="horse-health-resources.html">Health Resources</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Client Portal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-map-marker-alt" style="margin-top: 5px;"></i> 123 Equestrian Way, Valley Springs</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-phone" style="margin-top: 5px;"></i> 1-800-123-4567</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-envelope" style="margin-top: 5px;"></i> emergency@equinecare.com</li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2026 EquineCare Veterinary Practice. All Rights Reserved.</p>
             </div>
@@ -239,3 +496,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

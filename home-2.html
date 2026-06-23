@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         /* Home 2 Specific Premium Styles */
@@ -26,8 +26,13 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: 0;
-            opacity: 0.6;
             background: url('assets/images/hero_home2_1782131777160.png') center/cover no-repeat fixed;
+        }
+        .hero-2-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.7); /* Deep dark overlay */
+            z-index: 1;
         }
         .floating-element {
             animation: float 6s ease-in-out infinite;
@@ -49,8 +54,24 @@
         }
         .hero-2-content h1 {
             font-size: 5rem;
-            color: var(--primary);
+            color: white;
             margin-bottom: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .hero-2-content h1 {
+                font-size: 2.5rem;
+            }
+            .emergency-btn {
+                font-size: 1rem !important;
+                padding: 1rem 1.5rem !important;
+            }
+        }
+        .emergency-btn {
+            font-size: 1.5rem;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            color: white;
+            white-space: nowrap;
         }
         .glow-btn {
             background: linear-gradient(135deg, var(--primary), #3b82f6);
@@ -99,7 +120,6 @@
                 <a href="coverage-areas.html">Coverage Areas</a>
                 <a href="emergency-care.html">Emergency</a>
                 <a href="horse-health-resources.html">Resources</a>
-                <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
                 
                 <div class="nav-actions">
@@ -122,24 +142,17 @@
     <!-- Premium Hero Section -->
     <header class="hero-2">
         <div class="hero-2-bg"></div>
+        <div class="hero-2-overlay"></div>
         
-        <!-- Floating 3D Elements -->
-        <div class="floating-element" style="position: absolute; top: 20%; left: 10%; padding: 1rem; border-radius: 20px;">
-            <i class="fas fa-dna fa-2x" style="color: #3b82f6;"></i>
-            <span style=" margin-left: 10px;">Genomic Analysis</span>
-        </div>
-        <div class="floating-element" style="position: absolute; bottom: 30%; right: 15%; padding: 1rem; border-radius: 20px; animation-delay: 2s;">
-            <i class="fas fa-heartbeat fa-2x" style="color: #ef4444;"></i>
-            <span style=" margin-left: 10px;">Vitals Monitoring</span>
-        </div>
+        <!-- Floating 3D Elements Removed -->
 
         <div class="container">
             <div class="hero-2-content reveal">
                 <h1>Next-Gen Equine Care</h1>
-                <p style="font-size: 1.5rem;  margin-bottom: 2.5rem;">Experience the future of veterinary medicine. Precision diagnostics, advanced therapeutics, and 24/7 holographic monitoring.</p>
+                <p style="font-size: 1.5rem; color: white; margin-bottom: 2.5rem;">Experience the future of veterinary medicine. Precision diagnostics, advanced therapeutics, and 24/7 holographic monitoring.</p>
                 <div class="hero-buttons" style="justify-content: center;">
-                    <a href="services.html" class="btn glow-btn" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Explore Technology</a>
-                    <a href="emergency-care.html" class="btn btn-outline" style="  padding: 1rem 2.5rem; font-size: 1.1rem;">Emergency Hub</a>
+                    <a href="services.html" class="btn glow-btn" style="padding: 1rem 2.5rem; font-size: 1.1rem; color: white;">Explore Technology</a>
+                    <a href="emergency-care.html" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 1.1rem; color: white; border-color: white;">Emergency Hub</a>
                 </div>
             </div>
         </div>
@@ -153,26 +166,34 @@
                 <p >Pioneering treatments backed by scientific research.</p>
             </div>
             
-            <div class="grid-4">
-                <div class="premium-card reveal">
-                    <i class="fas fa-microscope fa-3x mb-1" style="color: #3b82f6;"></i>
-                    <h3 >Regenerative Medicine</h3>
-                    <p >Stem cell therapy and PRP treatments for rapid tendon and ligament recovery.</p>
+            <div class="grid-4" style="gap: 0;">
+                <div class="premium-card reveal" style="padding: 0; overflow: hidden; border-radius: 0;">
+                    <img src="assets/images/healthcare_1_regenerative.png" alt="Regenerative Medicine" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                    <div style="padding: 2.5rem;">
+                        <h3 >Regenerative Medicine</h3>
+                        <p >Stem cell therapy and PRP treatments for rapid tendon and ligament recovery.</p>
+                    </div>
                 </div>
-                <div class="premium-card reveal">
-                    <i class="fas fa-bone fa-3x mb-1" style="color: #3b82f6;"></i>
-                    <h3 >Advanced Orthopedics</h3>
-                    <p >Minimally invasive arthroscopic surgery and complex fracture repair.</p>
+                <div class="premium-card reveal" style="padding: 0; overflow: hidden; border-radius: 0;">
+                    <img src="assets/images/healthcare_2_orthopedics.png" alt="Advanced Orthopedics" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                    <div style="padding: 2.5rem;">
+                        <h3 >Advanced Orthopedics</h3>
+                        <p >Minimally invasive arthroscopic surgery and complex fracture repair.</p>
+                    </div>
                 </div>
-                <div class="premium-card reveal">
-                    <i class="fas fa-lungs fa-3x mb-1" style="color: #3b82f6;"></i>
-                    <h3 >Respiratory Diagnostics</h3>
-                    <p >Dynamic endoscopy and pulmonary function testing for athletic performance.</p>
+                <div class="premium-card reveal" style="padding: 0; overflow: hidden; border-radius: 0;">
+                    <img src="assets/images/healthcare_3_respiratory.png" alt="Respiratory Diagnostics" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                    <div style="padding: 2.5rem;">
+                        <h3 >Respiratory Diagnostics</h3>
+                        <p >Dynamic endoscopy and pulmonary function testing for athletic performance.</p>
+                    </div>
                 </div>
-                <div class="premium-card reveal">
-                    <i class="fas fa-brain fa-3x mb-1" style="color: #3b82f6;"></i>
-                    <h3 >Neurological Exams</h3>
-                    <p >Comprehensive neurological evaluations and specialized imaging for spinal issues.</p>
+                <div class="premium-card reveal" style="padding: 0; overflow: hidden; border-radius: 0;">
+                    <img src="assets/images/healthcare_4_neurological.png" alt="Neurological Exams" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                    <div style="padding: 2.5rem;">
+                        <h3 >Neurological Exams</h3>
+                        <p >Comprehensive neurological evaluations and specialized imaging for spinal issues.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -205,14 +226,115 @@
             <h2 style="color: white;">Specialized Treatment Programs</h2>
             <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 3rem;">Tailored therapeutic regimens designed to optimize performance and longevity.</p>
             
-            <div class="grid-2">
-                <div class="premium-card">
-                    <h3 style="color: white; padding-bottom: 1rem;">Sports Medicine</h3>
-                    <p style="color: rgba(255,255,255,0.9); margin-top: 1rem;">Performance evaluations, joint therapies, and rehabilitation programs for top-tier competitors.</p>
+            <style>
+                .hologram-container {
+                    position: relative;
+                    min-height: 400px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 4rem;
+                }
+                .hologram-core {
+                    position: relative;
+                    width: 250px;
+                    height: 250px;
+                    transform-style: preserve-3d;
+                    animation: rotate-core 12s linear infinite;
+                    z-index: 5;
+                }
+                .hologram-ring {
+                    position: absolute;
+                    top: 0; left: 0; right: 0; bottom: 0;
+                    border: 2px solid rgba(59, 130, 246, 0.6);
+                    border-radius: 50%;
+                    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), inset 0 0 30px rgba(59, 130, 246, 0.4);
+                }
+                .ring-1 { transform: rotateX(65deg) rotateY(0deg); }
+                .ring-2 { transform: rotateX(65deg) rotateY(60deg); }
+                .ring-3 { transform: rotateX(65deg) rotateY(120deg); }
+                .medical-cross {
+                    position: absolute;
+                    top: 50%; left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 4rem;
+                    color: #fff;
+                    text-shadow: 0 0 30px #3b82f6;
+                    animation: pulse-glow 2s infinite alternate;
+                }
+                
+                @keyframes rotate-core {
+                    0% { transform: rotateX(20deg) rotateY(0deg); }
+                    100% { transform: rotateX(20deg) rotateY(360deg); }
+                }
+                @keyframes pulse-glow {
+                    0% { text-shadow: 0 0 10px #3b82f6; transform: translate(-50%, -50%) scale(0.9); }
+                    100% { text-shadow: 0 0 50px #3b82f6, 0 0 80px #fff; transform: translate(-50%, -50%) scale(1.1); }
+                }
+
+                .hologram-data {
+                    position: absolute;
+                    width: 320px;
+                    text-align: left;
+                    z-index: 10;
+                }
+                .data-left {
+                    left: 2%;
+                    top: 15%;
+                    text-align: right;
+                }
+                .data-right {
+                    right: 2%;
+                    bottom: 15%;
+                }
+                .hologram-data h3 {
+                    color: #fff;
+                    font-size: 1.8rem;
+                    margin-bottom: 0.5rem;
+                    text-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+                    border-bottom: 1px solid rgba(255,255,255,0.2);
+                    padding-bottom: 0.5rem;
+                }
+                .hologram-data p {
+                    color: rgba(255,255,255,0.85);
+                    font-size: 1.1rem;
+                    line-height: 1.6;
+                }
+                
+                @media (max-width: 900px) {
+                    .hologram-container {
+                        flex-direction: column;
+                        min-height: auto;
+                        gap: 3rem;
+                    }
+                    .hologram-data {
+                        position: relative;
+                        left: auto !important;
+                        right: auto !important;
+                        top: auto !important;
+                        bottom: auto !important;
+                        text-align: center !important;
+                        width: 100%;
+                    }
+                }
+            </style>
+            
+            <div class="hologram-container">
+                <div class="hologram-data data-left">
+                    <h3>Sports Medicine</h3>
+                    <p>Performance evaluations, joint therapies, and rehabilitation programs for top-tier competitors.</p>
                 </div>
-                <div class="premium-card">
-                    <h3 style="color: white; padding-bottom: 1rem;">Neonatal Intensive Care</h3>
-                    <p style="color: rgba(255,255,255,0.9); margin-top: 1rem;">24/7 monitoring and life support for critically ill foals in our specialized ICU.</p>
+                
+                <div class="hologram-core">
+                    <div class="hologram-ring ring-1"></div>
+                    <div class="hologram-ring ring-2"></div>
+                    <div class="hologram-ring ring-3"></div>
+                    <i class="fas fa-plus medical-cross"></i>
+                </div>
+                
+                <div class="hologram-data data-right">
+                    <h3>Neonatal Intensive Care</h3>
+                    <p>24/7 monitoring and life support for critically ill foals in our specialized ICU.</p>
                 </div>
             </div>
         </div>
@@ -224,28 +346,28 @@
             <h2 >Elite Mobile Fleet Coverage</h2>
             <div class="grid-4 mt-3">
                 <div class="service-card" >
-                    <img src="assets/images/mobile_vet_unit_1782131451532.png" alt="North Region" class="service-img" loading="lazy">
+                    <img src="assets/images/fleet_north.png" alt="North Region" class="service-img" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="service-content">
                         <h3 >Northern Valley</h3>
                         <p >Rapid response units stationed across all northern equestrian centers.</p>
                     </div>
                 </div>
                 <div class="service-card" >
-                    <img src="assets/images/emergency_bg_1782131670668.png" alt="South Region" class="service-img" loading="lazy">
+                    <img src="assets/images/fleet_south.png" alt="South Region" class="service-img" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="service-content">
                         <h3 >Southern Plains</h3>
                         <p >Dedicated emergency response team available 24/7 for southern breeders.</p>
                     </div>
                 </div>
                 <div class="service-card" >
-                    <img src="assets/images/advanced_imaging_1782131791097.png" alt="East Region" class="service-img" loading="lazy">
+                    <img src="assets/images/fleet_east.png" alt="East Region" class="service-img" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="service-content">
                         <h3 >Eastern Hills</h3>
                         <p >Specialized diagnostic vans patrolling the eastern stables daily.</p>
                     </div>
                 </div>
                 <div class="service-card" >
-                    <img src="assets/images/hero_horse_vet_1782131426212.png" alt="West Region" class="service-img" loading="lazy">
+                    <img src="assets/images/fleet_west.png" alt="West Region" class="service-img" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="service-content">
                         <h3 >Western Coast</h3>
                         <p >Full-service mobile clinics serving coastal riding schools.</p>
@@ -260,44 +382,58 @@
         <div class="container reveal">
             <h2 style=" font-size: 3rem; margin-bottom: 1rem;">Global Emergency Command Center</h2>
             <p style=" font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem;">Connected via satellite to our mobile fleet. Real-time vital tracking and rapid dispatch protocols.</p>
-            <a href="tel:+18009990000" class="btn glow-btn" style="font-size: 1.5rem; padding: 1.5rem 3rem; border-radius: 50px;">
+            <a href="tel:+18009990000" class="btn glow-btn emergency-btn">
                 <i class="fas fa-satellite-dish"></i> Initiate Emergency Protocol
             </a>
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="footer">
-        <!-- Reusing standard footer structure -->
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
                     <h3><i class="fas fa-horse-head"></i> EquineCare</h3>
-                    <p>Premium veterinary services dedicated to the health, performance, and well-being of your horses.</p>
+                    <p>Premium veterinary services dedicated to the health, performance, and well-being of your horses. Available for routine and emergency care.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
+                
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="coverage-areas.html">Coverage Areas</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="emergency-care.html">Emergency</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="emergency-care.html">Emergency Guide</a></li>
+                        <li><a href="horse-health-resources.html">Health Resources</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Client Portal</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-links">
                     <h4>Contact Info</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> 1-800-123-4567</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-map-marker-alt" style="margin-top: 5px;"></i> 123 Equestrian Way, Valley Springs</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-phone" style="margin-top: 5px;"></i> 1-800-123-4567</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-envelope" style="margin-top: 5px;"></i> emergency@equinecare.com</li>
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 EquineCare Advanced Veterinary Practice.</p>
+                <p>&copy; 2026 EquineCare Veterinary Practice. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -317,3 +453,4 @@
     </script>
 </body>
 </html>
+

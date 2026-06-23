@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .pulse-btn {
             animation: pulse 2s infinite;
@@ -37,7 +37,6 @@
                 <a href="coverage-areas.html">Coverage Areas</a>
                 <a href="emergency-care.html" style="color: var(--secondary);">Emergency</a>
                 <a href="horse-health-resources.html">Resources</a>
-                <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
                 
                 <div class="nav-actions">
@@ -51,23 +50,142 @@
     </nav>
 
     <!-- Emergency Hero -->
-    <header class="hero" style="min-height: 60vh; padding-top: 100px;">
-        <div class="hero-bg">
-            <img src="assets/images/emergency_bg_1782131670668.png" alt="Veterinary Emergency" loading="lazy">
-        </div>
+    <header class="hero" style="min-height: 60vh; padding-top: 100px; background: var(--primary);">
         <div class="container text-center reveal">
             <span style="background: #dc3545; color: white; padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; margin-bottom: 1rem; display: inline-block;"><i class="fas fa-exclamation-triangle"></i> IMMEDIATE RESPONSE TEAM</span>
-            <h1 style="color: white; font-size: 4rem;">24/7 Equine Emergency Care</h1>
+            <h1 style="color: white; font-size: 3.5rem;">24/7 Equine Emergency Care</h1>
             <p style="color: white; font-size: 1.25rem; max-width: 800px; margin: 0 auto 2rem;">When every second counts, our dedicated emergency units are ready to deploy to your location with life-saving equipment and expertise.</p>
         </div>
     </header>
 
-    <!-- 24/7 Emergency Contact -->
-    <section class="section-padding" style="background: #dc3545; color: white;">
-        <div class="container text-center reveal">
-            <h2 style="color: white; margin-bottom: 1rem;">Is your horse in distress? Call us now!</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9);">Our dispatch center is staffed by veterinary technicians who can triage your situation and dispatch a vet immediately.</p>
-            <a href="tel:+18009990000" class="btn pulse-btn" style="background: white; color: #dc3545; font-size: 2rem; padding: 1.5rem 3rem; border-radius: 50px; text-decoration: none;">
+    <style>
+        .emergency-3d-container {
+            perspective: 1200px;
+            padding: 5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-light);
+            overflow: hidden;
+            position: relative;
+        }
+        .emergency-3d-panel {
+            background: linear-gradient(145deg, #e63946, #b01520);
+            border-radius: 30px;
+            padding: 4rem 5rem;
+            text-align: center;
+            transform-style: preserve-3d;
+            transform: rotateX(15deg) rotateY(0deg);
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.2), inset 0 5px 15px rgba(255,255,255,0.3);
+            position: relative;
+            border: 2px solid #ff6b6b;
+            max-width: 900px;
+            width: 100%;
+            z-index: 10;
+        }
+        .emergency-3d-container:hover .emergency-3d-panel {
+            transform: rotateX(5deg) rotateY(0deg) translateZ(40px);
+        }
+        .emergency-3d-panel::before {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            background: rgba(230, 57, 70, 0.3);
+            border-radius: 40px;
+            transform: translateZ(-30px);
+            filter: blur(25px);
+            animation: emergencyPulse 2s infinite alternate ease-in-out;
+            z-index: -1;
+        }
+        @keyframes emergencyPulse {
+            0% { transform: translateZ(-30px) scale(0.95); opacity: 0.6; filter: blur(20px); }
+            100% { transform: translateZ(-30px) scale(1.05); opacity: 1; filter: blur(40px); }
+        }
+
+        .e-title {
+            color: white;
+            font-size: 3rem;
+            transform: translateZ(50px);
+            text-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+        .e-desc {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.3rem;
+            transform: translateZ(40px);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .e-3d-button {
+            display: inline-block;
+            background: white;
+            color: #e63946;
+            font-size: 2.5rem;
+            font-weight: 800;
+            padding: 1.5rem 4rem;
+            border-radius: 60px;
+            text-decoration: none;
+            transform-style: preserve-3d;
+            transform: translateZ(60px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), inset 0 -5px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 4px solid white;
+        }
+        .e-3d-button:hover {
+            transform: translateZ(90px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 -5px 15px rgba(0,0,0,0.1);
+            color: #b01520;
+        }
+        .e-3d-button i {
+            margin-right: 20px;
+            animation: ring 1.5s infinite ease-in-out;
+            display: inline-block;
+        }
+        @keyframes ring {
+            0% { transform: rotate(0); }
+            10% { transform: rotate(20deg); }
+            20% { transform: rotate(-15deg); }
+            30% { transform: rotate(20deg); }
+            40% { transform: rotate(-15deg); }
+            50% { transform: rotate(0); }
+            100% { transform: rotate(0); }
+        }
+        @media (max-width: 768px) {
+            .emergency-3d-panel {
+                padding: 2rem 1.5rem;
+                transform: rotateX(5deg) !important;
+            }
+            .e-title {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                transform: translateZ(20px);
+            }
+            .e-desc {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+                transform: translateZ(15px);
+            }
+            .e-3d-button {
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+                transform: translateZ(25px);
+                white-space: nowrap;
+                display: block;
+                margin: 0 auto;
+                width: fit-content;
+                max-width: 100%;
+            }
+        }
+    </style>
+    <!-- 24/7 Emergency Contact (3D Console) -->
+    <section class="emergency-3d-container">
+        <div class="emergency-3d-panel">
+            <h2 class="e-title"><i class="fas fa-exclamation-circle" style="color: #ffcccc; margin-right: 15px;"></i>Is your horse in distress? Call us now!</h2>
+            <p class="e-desc">Our dispatch center is staffed by veterinary technicians who can triage your situation and dispatch a vet immediately.</p>
+            <a href="tel:+18009990000" class="e-3d-button">
                 <i class="fas fa-phone-volume"></i> 1-800-999-0000
             </a>
         </div>
@@ -144,45 +262,76 @@
             <p class="mb-3">We carry advanced life-saving equipment on every emergency vehicle.</p>
             
             <div class="grid-4 mt-3">
-                <div class="premium-card" style="background: var(--bg-white); border: 1px solid var(--border);">
-                    <i class="fas fa-x-ray fa-2x mb-1" style="color: var(--primary);"></i>
+                <div class="premium-card" style="background: var(--bg-white); border: 1px solid var(--border); padding: 2.5rem 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;">
+                    <i class="fas fa-x-ray fa-2x mb-2" style="color: var(--primary);"></i>
                     <h4>Portable Digital X-Ray</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Instant imaging for fracture assessment.</p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">Instant imaging for fracture assessment.</p>
                 </div>
-                <div class="premium-card" style="background: var(--bg-white); border: 1px solid var(--border);">
-                    <i class="fas fa-vial fa-2x mb-1" style="color: var(--primary);"></i>
+                <div class="premium-card" style="background: var(--bg-white); border: 1px solid var(--border); padding: 2.5rem 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;">
+                    <i class="fas fa-vial fa-2x mb-2" style="color: var(--primary);"></i>
                     <h4>Stall-side Blood Analysis</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Results in minutes for critical metabolic decisions.</p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">Results in minutes for critical metabolic decisions.</p>
                 </div>
-                <div class="premium-card" style="background: var(--bg-white); border: 1px solid var(--border);">
-                    <i class="fas fa-hand-holding-water fa-2x mb-1" style="color: var(--primary);"></i>
+                <div class="premium-card" style="background: var(--bg-white); border: 1px solid var(--border); padding: 2.5rem 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;">
+                    <i class="fas fa-hand-holding-water fa-2x mb-2" style="color: var(--primary);"></i>
                     <h4>IV Fluid Pumps</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">High-volume pumps for rapid rehydration.</p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">High-volume pumps for rapid rehydration.</p>
                 </div>
-                <div class="premium-card" style="background: var(--bg-white); border: 1px solid var(--border);">
-                    <i class="fas fa-lungs fa-2x mb-1" style="color: var(--primary);"></i>
+                <div class="premium-card" style="background: var(--bg-white); border: 1px solid var(--border); padding: 2.5rem 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;">
+                    <i class="fas fa-lungs fa-2x mb-2" style="color: var(--primary);"></i>
                     <h4>Oxygen Therapy Support</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">For critical neonatal and respiratory emergencies.</p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">For critical neonatal and respiratory emergencies.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call Emergency Line CTA -->
-    <section class="section-padding text-center" style="background: url('assets/images/emergency_bg_1782131670668.png') center/cover; position: relative;">
-        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8);"></div>
-        <div class="container reveal" style="position: relative; z-index: 10;">
-            <h2 style="color: white; font-size: 2.5rem;">Save Our Emergency Number Now</h2>
-            <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Don't wait until an emergency happens to find our number. Program it into your phone today.</p>
-            <a href="tel:+18009990000" class="btn btn-primary pulse-btn" style="font-size: 1.5rem; padding: 1rem 2rem; background: #dc3545; border: none;">
-                <i class="fas fa-mobile-alt"></i> 1-800-999-0000
-            </a>
-        </div>
-    </section>
 
-    <!-- Footer -->
+
+        <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3><i class="fas fa-horse-head"></i> EquineCare</h3>
+                    <p>Premium veterinary services dedicated to the health, performance, and well-being of your horses. Available for routine and emergency care.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="coverage-areas.html">Coverage Areas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="emergency-care.html">Emergency Guide</a></li>
+                        <li><a href="horse-health-resources.html">Health Resources</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Client Portal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-map-marker-alt" style="margin-top: 5px;"></i> 123 Equestrian Way, Valley Springs</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-phone" style="margin-top: 5px;"></i> 1-800-123-4567</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-envelope" style="margin-top: 5px;"></i> emergency@equinecare.com</li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2026 EquineCare Veterinary Practice. All Rights Reserved.</p>
             </div>
@@ -192,3 +341,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

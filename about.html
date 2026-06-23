@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -27,7 +27,6 @@
                 <a href="coverage-areas.html">Coverage Areas</a>
                 <a href="emergency-care.html">Emergency</a>
                 <a href="horse-health-resources.html">Resources</a>
-                <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
                 
                 <div class="nav-actions">
@@ -40,13 +39,16 @@
         </div>
     </nav>
 
+    <style>
+        .about-hero-h1 { font-size: 3.5rem; color: white; }
+        @media (max-width: 768px) {
+            .about-hero-h1 { font-size: 2.5rem; }
+        }
+    </style>
     <!-- Hero Banner -->
-    <header class="hero" style="min-height: 60vh; padding-top: 100px;">
-        <div class="hero-bg">
-            <img src="assets/images/veterinary_team_1782131876847.png" alt="Veterinary Team" loading="lazy">
-        </div>
+    <header class="hero" style="min-height: 60vh; padding-top: 100px; background: var(--primary);">
         <div class="container text-center reveal">
-            <h1 style="color: white; font-size: 3.5rem;">About EquineCare</h1>
+            <h1 class="about-hero-h1">About EquineCare</h1>
             <p style="color: white; font-size: 1.25rem; max-width: 600px; margin: 0 auto;">Dedicated to advancing equine health through compassionate care, clinical excellence, and state-of-the-art technology.</p>
         </div>
     </header>
@@ -69,8 +71,8 @@
                     </div>
                 </div>
             </div>
-            <div class="reveal">
-                <img src="assets/images/why_trust_us_1782131654621.png" alt="Our History" style="border-radius: var(--radius); box-shadow: var(--shadow-lg);" loading="lazy">
+            <div class="reveal" style="text-align: center; height: 100%; display: flex; align-items: center; justify-content: center;">
+                <img src="assets/images/Horse%20&amp;%20Equine%20Veterinary%20Practice.png" alt="Veterinary Excellence" style="border-radius: var(--radius); box-shadow: var(--shadow-lg); max-width: 100%; height: auto; object-fit: contain; max-height: 500px;" loading="lazy">
             </div>
         </div>
     </section>
@@ -83,29 +85,29 @@
             
             <div class="grid-4">
                 <div class="service-card reveal">
-                    <div class="service-content text-center" style="padding: 2.5rem 1.5rem;">
-                        <i class="fas fa-heart fa-3x mb-1" style="color: var(--secondary);"></i>
+                    <img src="assets/images/Compassion.png" alt="Compassion" class="service-img" loading="lazy">
+                    <div class="service-content text-center" style="padding: 1.5rem;">
                         <h3>Compassion</h3>
                         <p>We treat every horse as if it were our own, prioritizing comfort and well-being.</p>
                     </div>
                 </div>
                 <div class="service-card reveal">
-                    <div class="service-content text-center" style="padding: 2.5rem 1.5rem;">
-                        <i class="fas fa-award fa-3x mb-1" style="color: var(--secondary);"></i>
+                    <img src="assets/images/Excellence.png" alt="Excellence" class="service-img" loading="lazy">
+                    <div class="service-content text-center" style="padding: 1.5rem;">
                         <h3>Excellence</h3>
                         <p>Pursuing the highest medical standards through continuous education and innovation.</p>
                     </div>
                 </div>
                 <div class="service-card reveal">
-                    <div class="service-content text-center" style="padding: 2.5rem 1.5rem;">
-                        <i class="fas fa-handshake fa-3x mb-1" style="color: var(--secondary);"></i>
+                    <img src="assets/images/Integrity.png" alt="Integrity" class="service-img" loading="lazy">
+                    <div class="service-content text-center" style="padding: 1.5rem;">
                         <h3>Integrity</h3>
                         <p>Honest communication and transparent treatment plans with every horse owner.</p>
                     </div>
                 </div>
                 <div class="service-card reveal">
-                    <div class="service-content text-center" style="padding: 2.5rem 1.5rem;">
-                        <i class="fas fa-bolt fa-3x mb-1" style="color: var(--secondary);"></i>
+                    <img src="assets/images/Responsiveness.png" alt="Responsiveness" class="service-img" loading="lazy">
+                    <div class="service-content text-center" style="padding: 1.5rem;">
                         <h3>Responsiveness</h3>
                         <p>Being there when it matters most with our 24/7 emergency readiness.</p>
                     </div>
@@ -122,7 +124,7 @@
             
             <div class="grid-4">
                 <div class="glass-card" style="padding: 0; overflow: hidden;">
-                    <img src="assets/images/veterinary_team_1782131876847.png" alt="Dr. Smith" style="height: 250px; width: 100%; object-fit: cover; object-position: top;">
+                    <img src="assets/images/Dr.%20Sarah%20Jenkins.png" alt="Dr. Sarah Jenkins" style="height: 250px; width: 100%; object-fit: cover; object-position: top;">
                     <div style="padding: 1.5rem;">
                         <h3 style="margin-bottom: 0.5rem;">Dr. Sarah Jenkins</h3>
                         <p style="color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">Chief Equine Surgeon</p>
@@ -130,7 +132,7 @@
                     </div>
                 </div>
                 <div class="glass-card" style="padding: 0; overflow: hidden;">
-                    <img src="assets/images/veterinary_team_1782131876847.png" alt="Dr. Reynolds" style="height: 250px; width: 100%; object-fit: cover; object-position: center;">
+                    <img src="assets/images/Dr.%20Michael%20Reynolds.png" alt="Dr. Michael Reynolds" style="height: 250px; width: 100%; object-fit: cover; object-position: center;">
                     <div style="padding: 1.5rem;">
                         <h3 style="margin-bottom: 0.5rem;">Dr. Michael Reynolds</h3>
                         <p style="color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">Equine Dentist</p>
@@ -138,7 +140,7 @@
                     </div>
                 </div>
                 <div class="glass-card" style="padding: 0; overflow: hidden;">
-                    <img src="assets/images/veterinary_team_1782131876847.png" alt="Dr. Chen" style="height: 250px; width: 100%; object-fit: cover; object-position: bottom;">
+                    <img src="assets/images/Dr.%20Emily%20Chen.png" alt="Dr. Emily Chen" style="height: 250px; width: 100%; object-fit: cover; object-position: center;">
                     <div style="padding: 1.5rem;">
                         <h3 style="margin-bottom: 0.5rem;">Dr. Emily Chen</h3>
                         <p style="color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">Internal Medicine Specialist</p>
@@ -146,7 +148,7 @@
                     </div>
                 </div>
                 <div class="glass-card" style="padding: 0; overflow: hidden;">
-                    <img src="assets/images/veterinary_team_1782131876847.png" alt="Dr. Thompson" style="height: 250px; width: 100%; object-fit: cover;">
+                    <img src="assets/images/Dr.%20David%20Thompson.png" alt="Dr. David Thompson" style="height: 250px; width: 100%; object-fit: cover;">
                     <div style="padding: 1.5rem;">
                         <h3 style="margin-bottom: 0.5rem;">Dr. David Thompson</h3>
                         <p style="color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">Sports Medicine & Rehab</p>
@@ -158,21 +160,128 @@
     </section>
 
     <!-- Professional Certifications -->
-    <section class="section-padding text-center" style="background: var(--primary); color: white;">
+    <section class="section-padding text-center" style="background: var(--primary); color: white; position: relative; overflow: hidden;">
+        <style>
+            .hex-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 3rem;
+                padding: 3rem 0;
+                perspective: 1500px;
+                flex-wrap: wrap;
+            }
+            .hex-item {
+                position: relative;
+                width: 260px;
+                height: 290px;
+                background: transparent;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                transform-style: preserve-3d;
+            }
+            .hex-shape {
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+                backdrop-filter: blur(5px);
+                border: 1px solid rgba(255,255,255,0.15);
+                box-shadow: inset 0 0 20px rgba(255,255,255,0.05);
+                z-index: 1;
+                transition: all 0.5s ease;
+            }
+            /* Create an outer glowing border effect for the hexagon */
+            .hex-shape::before {
+                content: '';
+                position: absolute;
+                inset: -2px;
+                background: var(--secondary);
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                z-index: -1;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+            .hex-item:hover .hex-shape {
+                background: linear-gradient(135deg, rgba(212, 163, 115, 0.3) 0%, transparent 100%);
+                box-shadow: inset 0 0 40px rgba(212, 163, 115, 0.4), 0 20px 40px rgba(0,0,0,0.5);
+            }
+            .hex-item:nth-child(odd):hover {
+                transform: translateY(-20px) rotateY(10deg) scale(1.05);
+            }
+            .hex-item:nth-child(even):hover {
+                transform: translateY(-20px) rotateY(-10deg) scale(1.05);
+            }
+            .hex-content {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+                transform: translateZ(50px);
+                transition: transform 0.5s ease;
+            }
+            .hex-item:hover .hex-content {
+                transform: translateZ(80px);
+            }
+            .hex-icon {
+                font-size: 3.5rem;
+                color: var(--secondary);
+                margin: 0 auto 1.5rem auto;
+                display: block;
+                text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+                transition: transform 0.5s ease, text-shadow 0.5s ease;
+            }
+            .hex-item:hover .hex-icon {
+                transform: scale(1.2);
+                color: white;
+                text-shadow: 0 0 20px rgba(255,255,255,0.6);
+            }
+            .hex-text {
+                color: white;
+                font-size: 1.1rem;
+                line-height: 1.4;
+                font-weight: 500;
+                text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            }
+        </style>
         <div class="container reveal">
-            <h2 style="color: white; margin-bottom: 2rem;">Professional Certifications & Affiliations</h2>
-            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; opacity: 0.8;">
-                <div style="text-align: center;">
-                    <i class="fas fa-certificate fa-4x mb-1" style="color: var(--secondary);"></i>
-                    <p>American Association of<br>Equine Practitioners</p>
+            <h2 style="color: white; margin-bottom: 1rem;">Professional Certifications & Affiliations</h2>
+            <div class="hex-container">
+                <div class="hex-item">
+                    <div class="hex-shape"></div>
+                    <div class="hex-content">
+                        <i class="fas fa-certificate hex-icon"></i>
+                        <div class="hex-text">American Association of<br>Equine Practitioners</div>
+                    </div>
                 </div>
-                <div style="text-align: center;">
-                    <i class="fas fa-shield-alt fa-4x mb-1" style="color: var(--secondary);"></i>
-                    <p>Board Certified<br>Veterinary Surgeons</p>
+                <div class="hex-item">
+                    <div class="hex-shape"></div>
+                    <div class="hex-content">
+                        <i class="fas fa-shield-alt hex-icon"></i>
+                        <div class="hex-text">Board Certified<br>Veterinary Surgeons</div>
+                    </div>
                 </div>
-                <div style="text-align: center;">
-                    <i class="fas fa-star fa-4x mb-1" style="color: var(--secondary);"></i>
-                    <p>State Veterinary<br>Medical Board Approved</p>
+                <div class="hex-item">
+                    <div class="hex-shape"></div>
+                    <div class="hex-content">
+                        <i class="fas fa-star hex-icon"></i>
+                        <div class="hex-text">State Veterinary<br>Medical Board Approved</div>
+                    </div>
+                </div>
+                <div class="hex-item">
+                    <div class="hex-shape"></div>
+                    <div class="hex-content">
+                        <i class="fas fa-award hex-icon"></i>
+                        <div class="hex-text">Certified Equine<br>Rehabilitation Practitioner</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -187,37 +296,52 @@
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
                     <h3><i class="fas fa-horse-head"></i> EquineCare</h3>
-                    <p>Premium veterinary services dedicated to the health, performance, and well-being of your horses.</p>
+                    <p>Premium veterinary services dedicated to the health, performance, and well-being of your horses. Available for routine and emergency care.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
+                
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Our Services</a></li>
+                        <li><a href="coverage-areas.html">Coverage Areas</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="emergency-care.html">Emergency Guide</a></li>
+                        <li><a href="horse-health-resources.html">Health Resources</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Client Portal</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-links">
                     <h4>Contact Info</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> 1-800-123-4567</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-map-marker-alt" style="margin-top: 5px;"></i> 123 Equestrian Way, Valley Springs</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-phone" style="margin-top: 5px;"></i> 1-800-123-4567</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-envelope" style="margin-top: 5px;"></i> emergency@equinecare.com</li>
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 EquineCare Veterinary Practice.</p>
+                <p>&copy; 2026 EquineCare Veterinary Practice. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -225,3 +349,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

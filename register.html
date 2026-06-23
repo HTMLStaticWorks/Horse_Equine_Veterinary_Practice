@@ -7,25 +7,24 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .auth-container { display: flex; min-height: 100vh; }
-        .auth-right {
-            flex: 1;
-            background: url('assets/images/3d_horse_illustration_1782132397352.png') center/cover no-repeat;
+        .auth-container { 
+            display: flex; 
+            flex-direction: column;
+            min-height: 100vh; 
+            background: var(--bg-light);
             position: relative;
-            display: none;
+            padding: 2rem;
         }
-        .auth-right::after {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(30, 58, 95, 0.8));
-        }
+
         .auth-left {
-            flex: 1; display: flex; align-items: center; justify-content: center;
-            padding: 2rem; background: var(--bg-white);
+            margin: auto; display: flex; align-items: center; justify-content: center;
+            padding: 3rem; background: var(--bg-white);
+            border-radius: var(--radius); box-shadow: var(--shadow-lg);
+            width: 100%; max-width: 550px;
         }
-        @media (min-width: 768px) { .auth-right { display: block; } }
+
         .auth-form-wrapper { width: 100%; max-width: 500px; }
         .auth-input {
             width: 100%; padding: 1rem; margin-bottom: 0.5rem;
@@ -43,11 +42,44 @@
         .strength-bar.weak { background: #dc3545; width: 33%; }
         .strength-bar.medium { background: #ffc107; width: 66%; }
         .strength-bar.strong { background: #28a745; width: 100%; }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: transparent;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .social-btn:hover {
+            background: var(--bg-light);
+            border-color: var(--text-muted);
+        }
+        .social-btn.google { color: #db4437; }
+        .social-btn.apple { color: var(--text-dark); }
+
+        @media (max-width: 768px) {
+            .or-continue { white-space: nowrap; font-size: 0.8rem !important; padding: 0 5px !important; }
+        }
     </style>
 </head>
 <body>
 
     <div class="auth-container">
+        <!-- Theme & RTL Buttons -->
+        <div class="top-right-toggles" style="align-self: flex-end; margin-bottom: 1rem; display: flex; gap: 1rem; z-index: 50;">
+            <button class="theme-toggle btn btn-outline" style="padding: 0.5rem 1rem; border-radius: 50%;"><i class="fas fa-moon"></i></button>
+            <button class="rtl-toggle btn btn-outline" style="padding: 0.5rem 1rem; border-radius: 50%;"><i class="fas fa-exchange-alt"></i></button>
+        </div>
+        
         <!-- Left Side: Register Form -->
         <div class="auth-left">
             <div class="auth-form-wrapper">
@@ -56,26 +88,32 @@
                         <i class="fas fa-horse-head"></i> EquineCare
                     </a>
                 </div>
-                <h3 style="margin-bottom: 0.5rem;">Create an Account</h3>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Join EquineCare to access premium veterinary services.</p>
+                <div style="text-align: center;">
+                    <h3 style="margin-bottom: 0.5rem;">Create an Account</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Join EquineCare to access premium veterinary services.</p>
+                </div>
                 
                 <form action="#" method="POST" id="registerForm">
-                    <div class="grid-2" style="gap: 1rem; margin-bottom: 0;">
-                        <div>
-                            <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">First Name</label>
-                            <input type="text" class="auth-input" placeholder="John" required>
-                        </div>
-                        <div>
-                            <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Last Name</label>
-                            <input type="text" class="auth-input" placeholder="Doe" required>
-                        </div>
-                    </div>
+                    <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">First Name</label>
+                    <input type="text" class="auth-input" placeholder="John" style="margin-bottom: 1.5rem;" required>
+                    
+                    <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Last Name</label>
+                    <input type="text" class="auth-input" placeholder="Doe" style="margin-bottom: 1.5rem;" required>
                     
                     <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Email Address</label>
                     <input type="email" class="auth-input" placeholder="you@example.com" style="margin-bottom: 1.5rem;" required>
                     
                     <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Password</label>
-                    <input type="password" class="auth-input" id="pwd" placeholder="Create a strong password" required>
+                    <div style="position: relative; margin-bottom: 1.5rem;">
+                        <input type="password" class="auth-input pwd-input" id="pwd" placeholder="Create a strong password" style="margin-bottom: 0;" required>
+                        <i class="fas fa-eye pwd-toggle" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--text-muted);"></i>
+                    </div>
+
+                    <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Confirm Password</label>
+                    <div style="position: relative; margin-bottom: 1.5rem;">
+                        <input type="password" class="auth-input pwd-input" placeholder="Confirm your password" style="margin-bottom: 0;" required>
+                        <i class="fas fa-eye pwd-toggle" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--text-muted);"></i>
+                    </div>
                     
                     <!-- Password Strength Meter -->
                     <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.2rem; color: var(--text-muted);">
@@ -94,22 +132,42 @@
                     <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 2rem;">Create Account</button>
                 </form>
                 
-                <p style="text-align: center; color: var(--text-muted);">
+                <div style="text-align: center; margin-bottom: 2rem; position: relative;">
+                    <hr style="border: none; border-top: 1px solid var(--border);">
+                    <span class="or-continue" style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--bg-white); padding: 0 10px; color: var(--text-muted); font-size: 0.9rem;">Or continue with</span>
+                </div>
+                
+                <!-- Social Login Buttons -->
+                <button class="social-btn"><i class="fab fa-google google"></i> Sign in with Google</button>
+                <button class="social-btn"><i class="fab fa-apple apple"></i> Sign in with Apple</button>
+                
+                <p style="text-align: center; margin-top: 2rem; color: var(--text-muted);">
                     Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Sign In</a>
                 </p>
             </div>
         </div>
 
-        <!-- Right Side: 3D Horse Illustration -->
-        <div class="auth-right">
-            <div style="position: absolute; z-index: 10; top: 10%; right: 10%; text-align: right; color: white;">
-                <h2 style="font-size: 3rem; color: white;">Premium Care</h2>
-                <p style="font-size: 1.25rem; opacity: 0.8;">The best standard of medical care for your equine partner.</p>
-            </div>
-        </div>
+
     </div>
 
+    <script src="assets/js/main.js"></script>
     <script>
+        // Password Visibility Toggle
+        document.querySelectorAll('.pwd-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                if(input.type === 'password') {
+                    input.type = 'text';
+                    this.classList.remove('fa-eye');
+                    this.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    this.classList.remove('fa-eye-slash');
+                    this.classList.add('fa-eye');
+                }
+            });
+        });
+
         // Simple Password Strength validation
         const pwd = document.getElementById('pwd');
         const strengthBar = document.getElementById('strengthBar');

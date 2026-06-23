@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -27,7 +27,6 @@
                 <a href="coverage-areas.html">Coverage Areas</a>
                 <a href="emergency-care.html">Emergency</a>
                 <a href="horse-health-resources.html">Resources</a>
-                <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
                 
                 <div class="nav-actions">
@@ -41,16 +40,71 @@
     </nav>
 
     <!-- Service Overview (Hero) -->
-    <header class="hero" style="min-height: 50vh; padding-top: 100px;">
-        <div class="hero-bg">
-            <img src="assets/images/service_dental_1782131436904.png" alt="Equine Dentistry" loading="lazy">
-        </div>
+    <header class="hero" style="min-height: 50vh; padding-top: 100px; background: var(--primary);">
         <div class="container text-center reveal">
             <h1 style="color: white; font-size: 3.5rem;">Advanced Equine Dentistry</h1>
             <p style="color: white; font-size: 1.25rem; max-width: 800px; margin: 0 auto;">Comprehensive dental care is essential for your horse's overall health, digestion, and performance. We provide state-of-the-art floating, extractions, and diagnostic services.</p>
         </div>
     </header>
 
+    <!-- Dynamic Service Details (Hidden by default, shown via JS) -->
+    <section id="dynamic-service-section" class="section-padding" style="display: none; background: var(--bg-white);">
+        <div class="container">
+            <div class="grid-2 align-items-center">
+                <div class="reveal">
+                    <img id="dynamic-img" src="" alt="Service Image" style="width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-lg); object-fit: cover; max-height: 500px;">
+                </div>
+                <div class="reveal">
+                    <h2 id="dynamic-title" style="margin-bottom: 1.5rem; color: var(--primary);">Service Title</h2>
+                    <p id="dynamic-desc" style="font-size: 1.15rem; color: var(--secondary); font-weight: 600; margin-bottom: 1.5rem;"></p>
+                    <p id="dynamic-info" style="color: var(--text-dark); line-height: 1.8; margin-bottom: 2rem;"></p>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-alt"></i> Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generic Features Section (Visible on dynamic pages) -->
+    <section id="dynamic-features-section" class="section-padding" style="display: none; background: var(--bg-light);">
+        <div class="container text-center reveal">
+            <h2>Why Choose Our Care</h2>
+            <p class="mb-3">Our commitment to excellence in every service we provide.</p>
+            
+            <div class="grid-4">
+                <div class="service-card reveal">
+                    <div class="service-content text-center">
+                        <i class="fas fa-user-md fa-3x mb-1" style="color: var(--secondary);"></i>
+                        <h3>Expert Veterinarians</h3>
+                        <p>Our team consists of highly trained and experienced equine specialists.</p>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-content text-center">
+                        <i class="fas fa-laptop-medical fa-3x mb-1" style="color: var(--secondary);"></i>
+                        <h3>Advanced Technology</h3>
+                        <p>We utilize state-of-the-art medical equipment for accurate diagnostics.</p>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-content text-center">
+                        <i class="fas fa-heartbeat fa-3x mb-1" style="color: var(--secondary);"></i>
+                        <h3>Compassionate Care</h3>
+                        <p>We treat every horse with the utmost patience, respect, and gentle handling.</p>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-content text-center">
+                        <i class="fas fa-clock fa-3x mb-1" style="color: var(--secondary);"></i>
+                        <h3>24/7 Availability</h3>
+                        <p>Our mobile units are ready to respond to your horse's needs around the clock.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dental Specific Content Container -->
+    <div id="dental-content">
     <!-- Benefits -->
     <section class="section-padding" style="background: var(--bg-light);">
         <div class="container text-center reveal">
@@ -205,9 +259,52 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- End Dental Content Container -->
+    </div>
+
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3><i class="fas fa-horse-head"></i> EquineCare</h3>
+                    <p>Premium veterinary services dedicated to the health, performance, and well-being of your horses. Available for routine and emergency care.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="coverage-areas.html">Coverage Areas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="emergency-care.html">Emergency Guide</a></li>
+                        <li><a href="horse-health-resources.html">Health Resources</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Client Portal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-map-marker-alt" style="margin-top: 5px;"></i> 123 Equestrian Way, Valley Springs</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-phone" style="margin-top: 5px;"></i> 1-800-123-4567</li>
+                        <li style="display: flex; gap: 10px;"><i class="fas fa-envelope" style="margin-top: 5px;"></i> emergency@equinecare.com</li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2026 EquineCare Veterinary Practice. All Rights Reserved.</p>
             </div>
@@ -215,5 +312,62 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const service = params.get('service');
+            
+            const serviceData = {
+                'wellness': {
+                    title: 'Wellness Exams',
+                    heroImg: 'assets/images/Wellness%20Exams.png',
+                    desc: 'Comprehensive physical examinations to establish baseline health and identify early signs of illness.',
+                    info: 'Regular wellness exams are the foundation of preventive care. Our thorough nose-to-tail examinations allow us to detect subtle changes in your horse\'s health before they become serious problems. We evaluate body condition, heart and lung function, ophthalmic health, and musculoskeletal soundness to ensure your equine partner remains in peak condition.'
+                },
+                'vaccinations': {
+                    title: 'Vaccinations',
+                    heroImg: 'assets/images/Vaccinations.png',
+                    desc: 'Customized vaccination protocols based on your horse\'s age, use, and exposure risk.',
+                    info: 'We provide tailored vaccination programs designed specifically for your horse\'s lifestyle and risk factors. From core vaccines like Rabies and Tetanus to risk-based vaccines for competitive athletes, we ensure your horse has optimal immunity against preventable infectious diseases.'
+                },
+                'parasite': {
+                    title: 'Parasite Control',
+                    heroImg: 'assets/images/Parasite%20Control.png',
+                    desc: 'Fecal egg counts and targeted deworming strategies to manage internal parasites effectively.',
+                    info: 'Strategic parasite control goes beyond routine deworming. We utilize quantitative fecal egg counts to identify high shedders and develop customized deworming schedules. This evidence-based approach protects your horse from parasite-related colic while preventing anthelmintic resistance in your pasture.'
+                },
+                'nutrition': {
+                    title: 'Nutritional Consult',
+                    heroImg: 'assets/images/Nutritional%20Consult.png',
+                    desc: 'Expert evaluation of forage and feed to optimize your horse\'s diet and performance.',
+                    info: 'Optimal nutrition is critical for growth, performance, and overall health. We provide professional evaluation of your current feeding program, forage analysis, and customized dietary recommendations tailored to your horse\'s specific metabolic needs, workload, and medical conditions.'
+                }
+            };
+
+            if (service && serviceData[service]) {
+                const data = serviceData[service];
+                
+                // Update Hero
+                document.querySelector('.hero h1').textContent = data.title;
+                document.querySelector('.hero p').textContent = data.desc;
+                
+                // Hide default dental content
+                document.getElementById('dental-content').style.display = 'none';
+                
+                // Show dynamic section
+                document.getElementById('dynamic-service-section').style.display = 'block';
+                document.getElementById('dynamic-features-section').style.display = 'block';
+                
+                // Populate dynamic section
+                document.getElementById('dynamic-img').src = data.heroImg;
+                document.getElementById('dynamic-title').textContent = data.title;
+                document.getElementById('dynamic-desc').textContent = data.desc;
+                document.getElementById('dynamic-info').textContent = data.info;
+                
+                // Update page title
+                document.title = data.title + ' | EquineCare Veterinary Practice';
+            }
+        });
+    </script>
 </body>
 </html>
