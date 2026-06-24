@@ -7,7 +7,12 @@ html[dir="rtl"] {
 html[dir="rtl"] .text-center { text-align: center; }
 
 html[dir="rtl"] .logo {
-  flex-direction: row-reverse;
+  /* Removed row-reverse so the icon naturally appears first on the right in RTL */
+}
+
+html[dir="rtl"] .nav-actions .btn {
+  margin-left: 0;
+  margin-right: 0.75rem;
 }
 
 html[dir="rtl"] .nav-links {
@@ -38,4 +43,9 @@ html[dir="rtl"] .footer-links ul a:hover {
     left: auto;
     right: 0;
   }
+}
+
+html[dir="rtl"] .pwd-toggle {
+  right: auto !important;
+  left: 1rem !important;
 }

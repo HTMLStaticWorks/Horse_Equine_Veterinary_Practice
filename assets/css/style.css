@@ -718,3 +718,36 @@ transition: all 0.8s ease;
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Global Typography Weight Enforcement */
+h1, h2, h3, h4, h5, h6,
+.section-title, .hero h1, .hero-content h1,
+.footer-about h3, .footer-links h4,
+h1[style], h2[style], h3[style], h4[style], h5[style], h6[style],
+[class*="title"], [class*="heading"] {
+    font-weight: 500 !important;
+}
+
+p, p[style], .subheading, .lead, .desc, .kc-desc, .orb-desc,
+[class*="desc"], [class*="subtitle"], span[style*="font-weight"] {
+    font-weight: 400 !important;
+}
+
+b, strong, .font-bold {
+    font-weight: 500 !important;
+}
+
+/* Global Heading Sizing (Excluding Home Pages) */
+body:not(.home-page) section h2,
+body:not(.home-page) .section-padding h2,
+body:not(.home-page) .hero h1 {
+    font-size: 2.5rem !important;
+}
+
+@media (max-width: 768px) {
+    body:not(.home-page) section h2,
+    body:not(.home-page) .section-padding h2,
+    body:not(.home-page) .hero h1 {
+        font-size: 2rem !important;
+    }
+}
