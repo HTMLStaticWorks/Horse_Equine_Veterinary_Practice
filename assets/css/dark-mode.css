@@ -90,3 +90,15 @@
 [data-theme="dark"] .footer-bottom {
   color: var(--text-muted);
 }
+
+[data-theme="dark"] .service-card .btn-link {
+  color: var(--secondary); /* Gold color for CTA button in dark theme */
+}
+
+[data-theme="dark"] .service-card .btn-link:hover {
+  color: #fff;
+}
+
+[data-theme="dark"] .orb-desc {
+  color: #ffffff;
+}

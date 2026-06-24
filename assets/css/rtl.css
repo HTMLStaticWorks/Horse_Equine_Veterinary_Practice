@@ -20,8 +20,12 @@ html[dir="rtl"] .btn {
 }
 
 html[dir="rtl"] .service-card .btn-link {
-  align-self: flex-end;
+  align-self: flex-start;
   flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .service-card .btn-link i {
+  transform: scaleX(-1);
 }
 
 html[dir="rtl"] .footer-links ul a:hover {
